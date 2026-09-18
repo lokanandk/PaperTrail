@@ -103,11 +103,21 @@ def expand_predictions(predictions_path: Path, output_path: Path) -> None:
         primary = p["entity"]
         if p["entity_type"] in ("gene", "transporter"):
             info = expand_gene(primary, cache)
-            existing = set(a.lower() for a in p.get("aliases", []))
+            p.setdefault("aliases", [])
+            existing = set(a.lower() for a in p["aliases"])
+            auto = []
             for alias in info.get("aliases", []):
                 if alias.lower() not in existing:
                     p["aliases"].append(alias)
                     existing.add(alias.lower())
+                    auto.append(alias)
+            # Record which aliases we added ourselves. They are good for search
+            # recall but must not be trusted as proof that a paper is about this
+            # gene: mygene lists "PSSA" for PTDSS1, and in the literature "PSSa"
+            # nearly always means poly(styrene sulfonic acid), while "PSSA" means
+            # penicillin-susceptible S. aureus. Stage 4 weighs them accordingly.
+            if auto:
+                p["auto_aliases"] = auto
             p["resolved_symbol"] = info.get("resolved")
             p["entrez_id"] = info.get("entrez")
             p["ensembl_id"] = info.get("ensembl")

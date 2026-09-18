@@ -137,11 +137,126 @@ DISEASE_SEEDS = {
     "osteoporosis": "MONDO:0005298",
 }
 
+# Written-out names for each abbreviation.
+#
+# These used to live only in the comments above, which meant that when the
+# MONDO download was unavailable every disease ended up in the vocabulary as a
+# bare abbreviation with no synonyms. Anyone describing a prediction the way
+# people actually write — "elevated in diabetic kidney disease" rather than
+# "elevated in DKD" — got no match at all. Keeping the names here makes the
+# vocabulary useful offline; MONDO synonyms are merged on top when available.
+#
+# Deliberately excluded: bare "diabetes", which is ambiguous between T1D and
+# T2D, and any name that would collide with another entry.
+DISEASE_NAMES = {
+    "DKD":   ["diabetic kidney disease", "diabetic nephropathy"],
+    "HKD":   ["hypertensive kidney disease", "hypertensive nephropathy"],
+    "CKD":   ["chronic kidney disease", "chronic renal failure"],
+    "AKI":   ["acute kidney injury", "acute renal failure"],
+    "IgAN":  ["iga nephropathy", "berger disease"],
+    "FSGS":  ["focal segmental glomerulosclerosis"],
+    "ADPKD": ["autosomal dominant polycystic kidney disease", "polycystic kidney disease"],
+    "SLE":   ["systemic lupus erythematosus", "lupus"],
+    "RA":    ["rheumatoid arthritis"],
+    "IBD":   ["inflammatory bowel disease", "crohn disease", "ulcerative colitis"],
+    "AS":    ["ankylosing spondylitis"],
+    "SS":    ["sjogren syndrome", "sjögren syndrome"],
+    "SSc":   ["systemic sclerosis", "scleroderma"],
+    "vasculitis": ["vasculitis"],
+    "GPA":   ["granulomatosis with polyangiitis", "wegener granulomatosis"],
+    "T1D":   ["type 1 diabetes", "type 1 diabetes mellitus", "insulin-dependent diabetes"],
+    "T2D":   ["type 2 diabetes", "type 2 diabetes mellitus", "diabetes mellitus"],
+    "NAFLD": ["non-alcoholic fatty liver disease", "nonalcoholic fatty liver disease",
+              "metabolic dysfunction-associated steatotic liver disease", "masld"],
+    "NASH":  ["non-alcoholic steatohepatitis", "nonalcoholic steatohepatitis", "mash"],
+    "obesity": ["obesity"],
+    "MetS":  ["metabolic syndrome"],
+    "HF":    ["heart failure", "cardiac failure"],
+    "HFrEF": ["heart failure with reduced ejection fraction"],
+    "MI":    ["myocardial infarction", "heart attack"],
+    "CAD":   ["coronary artery disease", "coronary heart disease"],
+    "HTN":   ["hypertension", "high blood pressure"],
+    "AF":    ["atrial fibrillation"],
+    "PAH":   ["pulmonary arterial hypertension"],
+    "asthma": ["asthma"],
+    "COPD":  ["chronic obstructive pulmonary disease"],
+    "IPF":   ["idiopathic pulmonary fibrosis", "pulmonary fibrosis"],
+    "LUAD":  ["lung adenocarcinoma"],
+    "NSCLC": ["non-small cell lung cancer", "non-small cell lung carcinoma"],
+    "SCLC":  ["small cell lung cancer", "small cell lung carcinoma"],
+    "CRC":   ["colorectal cancer", "colorectal carcinoma", "colon cancer"],
+    "HCC":   ["hepatocellular carcinoma", "liver cancer"],
+    "CCA":   ["cholangiocarcinoma", "bile duct cancer"],
+    "PCa":   ["prostate cancer", "prostate adenocarcinoma"],
+    "BC":    ["breast cancer", "breast carcinoma"],
+    "OC":    ["ovarian cancer", "ovarian carcinoma"],
+    "GBM":   ["glioblastoma", "glioblastoma multiforme"],
+    "MM":    ["multiple myeloma"],
+    "AML":   ["acute myeloid leukemia", "acute myeloid leukaemia"],
+    "ALL":   ["acute lymphoblastic leukemia", "acute lymphoblastic leukaemia"],
+    "CLL":   ["chronic lymphocytic leukemia", "chronic lymphocytic leukaemia"],
+    "DLBCL": ["diffuse large b-cell lymphoma"],
+    "PDAC":  ["pancreatic ductal adenocarcinoma", "pancreatic cancer"],
+    "RCC":   ["renal cell carcinoma", "kidney cancer"],
+    "ccRCC": ["clear cell renal cell carcinoma"],
+    "GC":    ["gastric cancer", "stomach cancer"],
+    "BLC":   ["bladder cancer", "bladder carcinoma"],
+    "MEL":   ["melanoma", "cutaneous melanoma"],
+    "AD":    ["alzheimer disease", "alzheimer's disease"],
+    "PD":    ["parkinson disease", "parkinson's disease"],
+    "MS":    ["multiple sclerosis"],
+    "ALS":   ["amyotrophic lateral sclerosis", "motor neuron disease"],
+    "HD":    ["huntington disease", "huntington's disease"],
+    "schizophrenia": ["schizophrenia"],
+    "MDD":   ["major depressive disorder", "depression"],
+    "sepsis": ["sepsis", "septic shock"],
+    "COVID19": ["covid-19", "covid19", "sars-cov-2 infection"],
+    "HIV":   ["hiv infection", "aids"],
+    "TB":    ["tuberculosis"],
+    "psoriasis": ["psoriasis"],
+    "atopic_dermatitis": ["atopic dermatitis", "eczema"],
+    "osteoarthritis": ["osteoarthritis"],
+    "osteoporosis": ["osteoporosis"],
+}
+
+# Short names for cell types, for the same reason as DISEASE_NAMES.
+# Cell Ontology labels are precise but nobody writes them out: the official
+# name for C_TAL is "kidney loop of Henle thick ascending limb epithelial
+# cell", whereas a description of a finding says "thick ascending limb" or
+# "TAL". Only listed where the ontology label differs from everyday usage.
+CELL_TYPE_NAMES = {
+    "C_TAL":  ["thick ascending limb", "TAL", "cortical thick ascending limb",
+               "medullary thick ascending limb", "loop of Henle"],
+    "iPT":    ["proximal tubule", "proximal tubular cell", "PT"],
+    "tubular": ["tubular cell", "renal tubular cell"],
+    "Podo":   ["podocyte"],
+    "EC_glom": ["glomerular endothelial cell"],
+    "MC":     ["mesangial cell"],
+    "pDC":    ["plasmacytoid dendritic cell"],
+    "Treg":   ["regulatory T cell", "Tregs"],
+    "Macro":  ["macrophage"],
+    "Mono":   ["monocyte"],
+    "Neut":   ["neutrophil"],
+    "Hepato": ["hepatocyte"],
+    "HSC":    ["hepatic stellate cell"],
+    "AT2":    ["alveolar type II cell", "type II pneumocyte"],
+    "AT1":    ["alveolar type I cell", "type I pneumocyte"],
+    "AM":     ["alveolar macrophage"],
+    "CM":     ["cardiomyocyte"],
+    "MG":     ["microglia"],
+    "Astro":  ["astrocyte"],
+    "Neuron": ["neuron"],
+    "BetaCell": ["beta cell", "pancreatic beta cell", "islet beta cell"],
+}
+
 # Cell-type seeds: internal code → Cell Ontology ID
 # Look up at https://www.ebi.ac.uk/ols4/ontologies/cl
 CELL_TYPE_SEEDS = {
     # ── Kidney ────────────────────────────────────────────────────────────────
-    "C_TAL":   "CL:0002204",   # thick ascending limb epithelial cell
+    # CL:0002204 is "tuft cell", not thick ascending limb — using it gave C_TAL
+    # the synonyms "tuft cell" and "brush cell", so a TAL prediction matched
+    # entirely unrelated papers.
+    "C_TAL":   "CL:1001106",   # kidney loop of Henle thick ascending limb epithelial cell
     "iPT":     "CL:1001107",   # renal proximal tubule epithelial cell
     "Podo":    "CL:0000653",   # glomerular visceral epithelial cell (podocyte)
     "tubular": "CL:1001107",   # proximal tubular cell (reuse)
@@ -386,9 +501,10 @@ def build_disease_tables(mondo_terms: dict) -> tuple:
         if not syns and mondo_terms:
             print(f"    ⚠  No synonyms found for {abbrev} ({mondo_id}) — check the MONDO ID")
 
-        # The primary name from ontology (or first synonym)
-        primary_name = syns[0] if syns else abbrev.lower()
-        full_synonyms = syns[:12]  # cap at 12 to keep YAML tidy
+        # Built-in names come first so the table is usable even with no MONDO
+        # download; ontology synonyms are merged on top when they are available.
+        full_synonyms = list(dict.fromkeys(DISEASE_NAMES.get(abbrev, []) + syns))[:12]
+        primary_name = full_synonyms[0] if full_synonyms else abbrev.lower()
 
         # disease_table entry: every lowercase alias → (abbrev, synonyms)
         all_keys = {abbrev.lower(), primary_name.lower()}
@@ -409,7 +525,7 @@ def build_cell_type_table(cl_terms: dict) -> dict:
         if not syns and cl_terms:
             print(f"    ⚠  No synonyms for {code} ({cl_id}) — check the CL ID")
 
-        full_synonyms = syns[:8]
+        full_synonyms = list(dict.fromkeys(CELL_TYPE_NAMES.get(code, []) + syns))[:8]
         all_aliases = {code.lower()}
         all_aliases.update(s.lower() for s in full_synonyms)
 

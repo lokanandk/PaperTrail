@@ -862,6 +862,15 @@ _FUZZY_MIN_SCORE     = 90.0
 # Below this, the paper does not really name the entity at all.
 ENTITY_PRESENCE_MIN = 90.0
 
+# Aliases this short, when they were added automatically by the alias expansion
+# in stage 1 rather than written by the user, are treated as ambiguous. Gene
+# synonym lists are full of them and they collide badly with unrelated
+# terminology — "PSSA" is a synonym for PTDSS1, but papers containing "PSSa"
+# are almost always about poly(styrene sulfonic acid) or penicillin-susceptible
+# S. aureus. Matching one of these alone is a hint, not evidence.
+_AMBIGUOUS_ALIAS_MAXLEN = 5
+_AMBIGUOUS_ALIAS_SCORE  = 60.0
+
 
 def _names_entity(text: str, alias: str) -> bool:
     """True if alias appears as a whole word, not buried inside another token."""
@@ -886,13 +895,24 @@ def alias_match_score(record: dict, prediction: dict) -> tuple:
     if not aliases:
         aliases = [prediction.get("entity", "")]
 
+    # Aliases the user wrote are trusted; ones stage 1 pulled from mygene are
+    # only trusted when they are long enough to be unambiguous.
+    auto = {str(a).strip().lower() for a in (prediction.get("auto_aliases") or [])}
+
     best, best_a = 0.0, None
     for a in aliases:
         al = str(a).strip().lower()
         if not al:
             continue
+        trusted = (al not in auto
+                   or len(al) > _AMBIGUOUS_ALIAS_MAXLEN
+                   or " " in al)
         if _names_entity(text, al):
-            return 100.0, a
+            if trusted:
+                return 100.0, a
+            if _AMBIGUOUS_ALIAS_SCORE > best:
+                best, best_a = _AMBIGUOUS_ALIAS_SCORE, a
+            continue
         if len(al) >= _FUZZY_MIN_ALIAS_LEN and " " in al:
             sc = fuzz.partial_ratio(al, text)
             if sc >= _FUZZY_MIN_SCORE and sc > best:

@@ -7,342 +7,1437 @@
     "CELL_TYPE_SEEDS in build_papertrail_vocab.py then re-run."
   ],
   "disease_context_map": {
+    "diabetic nephropathy": "DKD",
     "dkd": "DKD",
+    "diabetic kidney disease": "DKD",
+    "hypertensive nephropathy": "HKD",
     "hkd": "HKD",
+    "hypertensive kidney disease": "HKD",
     "ckd": "CKD",
+    "chronic kidney disease": "CKD",
+    "chronic renal failure": "CKD",
+    "acute renal failure": "AKI",
     "aki": "AKI",
+    "acute kidney injury": "AKI",
+    "iga nephropathy": "IgAN",
     "igan": "IgAN",
+    "berger disease": "IgAN",
     "fsgs": "FSGS",
+    "focal segmental glomerulosclerosis": "FSGS",
     "adpkd": "ADPKD",
+    "autosomal dominant polycystic kidney disease": "ADPKD",
+    "polycystic kidney disease": "ADPKD",
     "sle": "SLE",
+    "systemic lupus erythematosus": "SLE",
+    "lupus": "SLE",
+    "rheumatoid arthritis": "RA",
     "ra": "RA",
+    "crohn disease": "IBD",
+    "ulcerative colitis": "IBD",
     "ibd": "IBD",
+    "inflammatory bowel disease": "IBD",
+    "ankylosing spondylitis": "AS",
     "as": "AS",
+    "sjögren syndrome": "SS",
+    "sjogren syndrome": "SS",
     "ss": "SS",
+    "scleroderma": "SSc",
     "ssc": "SSc",
+    "systemic sclerosis": "SSc",
     "vasculitis": "vasculitis",
+    "wegener granulomatosis": "GPA",
     "gpa": "GPA",
+    "granulomatosis with polyangiitis": "GPA",
+    "type 1 diabetes": "T1D",
+    "type 1 diabetes mellitus": "T1D",
     "t1d": "T1D",
+    "insulin-dependent diabetes": "T1D",
+    "type 2 diabetes mellitus": "T2D",
     "t2d": "T2D",
+    "diabetes mellitus": "T2D",
+    "type 2 diabetes": "T2D",
+    "non-alcoholic fatty liver disease": "NAFLD",
+    "masld": "NAFLD",
+    "nonalcoholic fatty liver disease": "NAFLD",
     "nafld": "NAFLD",
+    "metabolic dysfunction-associated steatotic liver disease": "NAFLD",
+    "nonalcoholic steatohepatitis": "NASH",
+    "mash": "NASH",
     "nash": "NASH",
+    "non-alcoholic steatohepatitis": "NASH",
     "obesity": "obesity",
+    "metabolic syndrome": "MetS",
     "mets": "MetS",
+    "heart failure": "HF",
+    "cardiac failure": "HF",
     "hf": "HF",
     "hfref": "HFrEF",
+    "heart failure with reduced ejection fraction": "HFrEF",
+    "heart attack": "MI",
+    "myocardial infarction": "MI",
     "mi": "MI",
+    "coronary heart disease": "CAD",
+    "coronary artery disease": "CAD",
     "cad": "CAD",
+    "hypertension": "HTN",
     "htn": "HTN",
+    "high blood pressure": "HTN",
+    "atrial fibrillation": "AF",
     "af": "AF",
     "pah": "PAH",
+    "pulmonary arterial hypertension": "PAH",
     "asthma": "asthma",
+    "chronic obstructive pulmonary disease": "COPD",
     "copd": "COPD",
+    "pulmonary fibrosis": "IPF",
+    "idiopathic pulmonary fibrosis": "IPF",
     "ipf": "IPF",
+    "lung adenocarcinoma": "LUAD",
     "luad": "LUAD",
+    "non-small cell lung cancer": "NSCLC",
     "nsclc": "NSCLC",
+    "non-small cell lung carcinoma": "NSCLC",
     "sclc": "SCLC",
+    "small cell lung cancer": "SCLC",
+    "small cell lung carcinoma": "SCLC",
+    "colorectal carcinoma": "CRC",
     "crc": "CRC",
+    "colon cancer": "CRC",
+    "colorectal cancer": "CRC",
+    "hepatocellular carcinoma": "HCC",
     "hcc": "HCC",
+    "liver cancer": "HCC",
+    "bile duct cancer": "CCA",
+    "cholangiocarcinoma": "CCA",
     "cca": "CCA",
+    "prostate adenocarcinoma": "PCa",
     "pca": "PCa",
+    "prostate cancer": "PCa",
+    "breast cancer": "BC",
+    "breast carcinoma": "BC",
     "bc": "BC",
+    "ovarian cancer": "OC",
     "oc": "OC",
+    "ovarian carcinoma": "OC",
+    "glioblastoma multiforme": "GBM",
+    "glioblastoma": "GBM",
     "gbm": "GBM",
     "mm": "MM",
+    "multiple myeloma": "MM",
+    "acute myeloid leukaemia": "AML",
+    "acute myeloid leukemia": "AML",
     "aml": "AML",
     "all": "ALL",
+    "acute lymphoblastic leukemia": "ALL",
+    "acute lymphoblastic leukaemia": "ALL",
+    "chronic lymphocytic leukaemia": "CLL",
     "cll": "CLL",
+    "chronic lymphocytic leukemia": "CLL",
+    "diffuse large b-cell lymphoma": "DLBCL",
     "dlbcl": "DLBCL",
     "pdac": "PDAC",
+    "pancreatic cancer": "PDAC",
+    "pancreatic ductal adenocarcinoma": "PDAC",
+    "renal cell carcinoma": "RCC",
+    "kidney cancer": "RCC",
     "rcc": "RCC",
     "ccrcc": "ccRCC",
+    "clear cell renal cell carcinoma": "ccRCC",
+    "stomach cancer": "GC",
     "gc": "GC",
+    "gastric cancer": "GC",
+    "bladder cancer": "BLC",
+    "bladder carcinoma": "BLC",
     "blc": "BLC",
+    "cutaneous melanoma": "MEL",
     "mel": "MEL",
+    "melanoma": "MEL",
     "ad": "AD",
+    "alzheimer disease": "AD",
+    "alzheimer's disease": "AD",
     "pd": "PD",
+    "parkinson's disease": "PD",
+    "parkinson disease": "PD",
+    "multiple sclerosis": "MS",
     "ms": "MS",
+    "motor neuron disease": "ALS",
     "als": "ALS",
+    "amyotrophic lateral sclerosis": "ALS",
+    "huntington disease": "HD",
+    "huntington's disease": "HD",
     "hd": "HD",
     "schizophrenia": "schizophrenia",
+    "depression": "MDD",
     "mdd": "MDD",
+    "major depressive disorder": "MDD",
     "sepsis": "sepsis",
+    "septic shock": "sepsis",
     "covid19": "COVID19",
+    "sars-cov-2 infection": "COVID19",
+    "covid-19": "COVID19",
+    "hiv infection": "HIV",
+    "aids": "HIV",
     "hiv": "HIV",
     "tb": "TB",
+    "tuberculosis": "TB",
     "psoriasis": "psoriasis",
     "atopic_dermatitis": "atopic_dermatitis",
+    "atopic dermatitis": "atopic_dermatitis",
+    "eczema": "atopic_dermatitis",
     "osteoarthritis": "osteoarthritis",
     "osteoporosis": "osteoporosis"
   },
   "disease_table": {
+    "diabetic nephropathy": [
+      "DKD",
+      [
+        "diabetic kidney disease",
+        "diabetic nephropathy"
+      ]
+    ],
     "dkd": [
       "DKD",
-      []
+      [
+        "diabetic kidney disease",
+        "diabetic nephropathy"
+      ]
+    ],
+    "diabetic kidney disease": [
+      "DKD",
+      [
+        "diabetic kidney disease",
+        "diabetic nephropathy"
+      ]
+    ],
+    "hypertensive nephropathy": [
+      "HKD",
+      [
+        "hypertensive kidney disease",
+        "hypertensive nephropathy"
+      ]
     ],
     "hkd": [
       "HKD",
-      []
+      [
+        "hypertensive kidney disease",
+        "hypertensive nephropathy"
+      ]
+    ],
+    "hypertensive kidney disease": [
+      "HKD",
+      [
+        "hypertensive kidney disease",
+        "hypertensive nephropathy"
+      ]
     ],
     "ckd": [
       "CKD",
-      []
+      [
+        "chronic kidney disease",
+        "chronic renal failure"
+      ]
+    ],
+    "chronic kidney disease": [
+      "CKD",
+      [
+        "chronic kidney disease",
+        "chronic renal failure"
+      ]
+    ],
+    "chronic renal failure": [
+      "CKD",
+      [
+        "chronic kidney disease",
+        "chronic renal failure"
+      ]
+    ],
+    "acute renal failure": [
+      "AKI",
+      [
+        "acute kidney injury",
+        "acute renal failure"
+      ]
     ],
     "aki": [
       "AKI",
-      []
+      [
+        "acute kidney injury",
+        "acute renal failure"
+      ]
+    ],
+    "acute kidney injury": [
+      "AKI",
+      [
+        "acute kidney injury",
+        "acute renal failure"
+      ]
+    ],
+    "iga nephropathy": [
+      "IgAN",
+      [
+        "iga nephropathy",
+        "berger disease"
+      ]
     ],
     "igan": [
       "IgAN",
-      []
+      [
+        "iga nephropathy",
+        "berger disease"
+      ]
+    ],
+    "berger disease": [
+      "IgAN",
+      [
+        "iga nephropathy",
+        "berger disease"
+      ]
     ],
     "fsgs": [
       "FSGS",
-      []
+      [
+        "focal segmental glomerulosclerosis"
+      ]
+    ],
+    "focal segmental glomerulosclerosis": [
+      "FSGS",
+      [
+        "focal segmental glomerulosclerosis"
+      ]
     ],
     "adpkd": [
       "ADPKD",
-      []
+      [
+        "autosomal dominant polycystic kidney disease",
+        "polycystic kidney disease"
+      ]
+    ],
+    "autosomal dominant polycystic kidney disease": [
+      "ADPKD",
+      [
+        "autosomal dominant polycystic kidney disease",
+        "polycystic kidney disease"
+      ]
+    ],
+    "polycystic kidney disease": [
+      "ADPKD",
+      [
+        "autosomal dominant polycystic kidney disease",
+        "polycystic kidney disease"
+      ]
     ],
     "sle": [
       "SLE",
-      []
+      [
+        "systemic lupus erythematosus",
+        "lupus"
+      ]
+    ],
+    "systemic lupus erythematosus": [
+      "SLE",
+      [
+        "systemic lupus erythematosus",
+        "lupus"
+      ]
+    ],
+    "lupus": [
+      "SLE",
+      [
+        "systemic lupus erythematosus",
+        "lupus"
+      ]
+    ],
+    "rheumatoid arthritis": [
+      "RA",
+      [
+        "rheumatoid arthritis"
+      ]
     ],
     "ra": [
       "RA",
-      []
+      [
+        "rheumatoid arthritis"
+      ]
+    ],
+    "crohn disease": [
+      "IBD",
+      [
+        "inflammatory bowel disease",
+        "crohn disease",
+        "ulcerative colitis"
+      ]
+    ],
+    "ulcerative colitis": [
+      "IBD",
+      [
+        "inflammatory bowel disease",
+        "crohn disease",
+        "ulcerative colitis"
+      ]
     ],
     "ibd": [
       "IBD",
-      []
+      [
+        "inflammatory bowel disease",
+        "crohn disease",
+        "ulcerative colitis"
+      ]
+    ],
+    "inflammatory bowel disease": [
+      "IBD",
+      [
+        "inflammatory bowel disease",
+        "crohn disease",
+        "ulcerative colitis"
+      ]
+    ],
+    "ankylosing spondylitis": [
+      "AS",
+      [
+        "ankylosing spondylitis"
+      ]
     ],
     "as": [
       "AS",
-      []
+      [
+        "ankylosing spondylitis"
+      ]
+    ],
+    "sjögren syndrome": [
+      "SS",
+      [
+        "sjogren syndrome",
+        "sjögren syndrome"
+      ]
+    ],
+    "sjogren syndrome": [
+      "SS",
+      [
+        "sjogren syndrome",
+        "sjögren syndrome"
+      ]
     ],
     "ss": [
       "SS",
-      []
+      [
+        "sjogren syndrome",
+        "sjögren syndrome"
+      ]
+    ],
+    "scleroderma": [
+      "SSc",
+      [
+        "systemic sclerosis",
+        "scleroderma"
+      ]
     ],
     "ssc": [
       "SSc",
-      []
+      [
+        "systemic sclerosis",
+        "scleroderma"
+      ]
+    ],
+    "systemic sclerosis": [
+      "SSc",
+      [
+        "systemic sclerosis",
+        "scleroderma"
+      ]
     ],
     "vasculitis": [
       "vasculitis",
-      []
+      [
+        "vasculitis"
+      ]
+    ],
+    "wegener granulomatosis": [
+      "GPA",
+      [
+        "granulomatosis with polyangiitis",
+        "wegener granulomatosis"
+      ]
     ],
     "gpa": [
       "GPA",
-      []
+      [
+        "granulomatosis with polyangiitis",
+        "wegener granulomatosis"
+      ]
+    ],
+    "granulomatosis with polyangiitis": [
+      "GPA",
+      [
+        "granulomatosis with polyangiitis",
+        "wegener granulomatosis"
+      ]
+    ],
+    "type 1 diabetes": [
+      "T1D",
+      [
+        "type 1 diabetes",
+        "type 1 diabetes mellitus",
+        "insulin-dependent diabetes"
+      ]
+    ],
+    "type 1 diabetes mellitus": [
+      "T1D",
+      [
+        "type 1 diabetes",
+        "type 1 diabetes mellitus",
+        "insulin-dependent diabetes"
+      ]
     ],
     "t1d": [
       "T1D",
-      []
+      [
+        "type 1 diabetes",
+        "type 1 diabetes mellitus",
+        "insulin-dependent diabetes"
+      ]
+    ],
+    "insulin-dependent diabetes": [
+      "T1D",
+      [
+        "type 1 diabetes",
+        "type 1 diabetes mellitus",
+        "insulin-dependent diabetes"
+      ]
+    ],
+    "type 2 diabetes mellitus": [
+      "T2D",
+      [
+        "type 2 diabetes",
+        "type 2 diabetes mellitus",
+        "diabetes mellitus"
+      ]
     ],
     "t2d": [
       "T2D",
-      []
+      [
+        "type 2 diabetes",
+        "type 2 diabetes mellitus",
+        "diabetes mellitus"
+      ]
+    ],
+    "diabetes mellitus": [
+      "T2D",
+      [
+        "type 2 diabetes",
+        "type 2 diabetes mellitus",
+        "diabetes mellitus"
+      ]
+    ],
+    "type 2 diabetes": [
+      "T2D",
+      [
+        "type 2 diabetes",
+        "type 2 diabetes mellitus",
+        "diabetes mellitus"
+      ]
+    ],
+    "non-alcoholic fatty liver disease": [
+      "NAFLD",
+      [
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic fatty liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "masld"
+      ]
+    ],
+    "masld": [
+      "NAFLD",
+      [
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic fatty liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "masld"
+      ]
+    ],
+    "nonalcoholic fatty liver disease": [
+      "NAFLD",
+      [
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic fatty liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "masld"
+      ]
     ],
     "nafld": [
       "NAFLD",
-      []
+      [
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic fatty liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "masld"
+      ]
+    ],
+    "metabolic dysfunction-associated steatotic liver disease": [
+      "NAFLD",
+      [
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic fatty liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "masld"
+      ]
+    ],
+    "nonalcoholic steatohepatitis": [
+      "NASH",
+      [
+        "non-alcoholic steatohepatitis",
+        "nonalcoholic steatohepatitis",
+        "mash"
+      ]
+    ],
+    "mash": [
+      "NASH",
+      [
+        "non-alcoholic steatohepatitis",
+        "nonalcoholic steatohepatitis",
+        "mash"
+      ]
     ],
     "nash": [
       "NASH",
-      []
+      [
+        "non-alcoholic steatohepatitis",
+        "nonalcoholic steatohepatitis",
+        "mash"
+      ]
+    ],
+    "non-alcoholic steatohepatitis": [
+      "NASH",
+      [
+        "non-alcoholic steatohepatitis",
+        "nonalcoholic steatohepatitis",
+        "mash"
+      ]
     ],
     "obesity": [
       "obesity",
-      []
+      [
+        "obesity"
+      ]
+    ],
+    "metabolic syndrome": [
+      "MetS",
+      [
+        "metabolic syndrome"
+      ]
     ],
     "mets": [
       "MetS",
-      []
+      [
+        "metabolic syndrome"
+      ]
+    ],
+    "heart failure": [
+      "HF",
+      [
+        "heart failure",
+        "cardiac failure"
+      ]
+    ],
+    "cardiac failure": [
+      "HF",
+      [
+        "heart failure",
+        "cardiac failure"
+      ]
     ],
     "hf": [
       "HF",
-      []
+      [
+        "heart failure",
+        "cardiac failure"
+      ]
     ],
     "hfref": [
       "HFrEF",
-      []
+      [
+        "heart failure with reduced ejection fraction"
+      ]
+    ],
+    "heart failure with reduced ejection fraction": [
+      "HFrEF",
+      [
+        "heart failure with reduced ejection fraction"
+      ]
+    ],
+    "heart attack": [
+      "MI",
+      [
+        "myocardial infarction",
+        "heart attack"
+      ]
+    ],
+    "myocardial infarction": [
+      "MI",
+      [
+        "myocardial infarction",
+        "heart attack"
+      ]
     ],
     "mi": [
       "MI",
-      []
+      [
+        "myocardial infarction",
+        "heart attack"
+      ]
+    ],
+    "coronary heart disease": [
+      "CAD",
+      [
+        "coronary artery disease",
+        "coronary heart disease"
+      ]
+    ],
+    "coronary artery disease": [
+      "CAD",
+      [
+        "coronary artery disease",
+        "coronary heart disease"
+      ]
     ],
     "cad": [
       "CAD",
-      []
+      [
+        "coronary artery disease",
+        "coronary heart disease"
+      ]
+    ],
+    "hypertension": [
+      "HTN",
+      [
+        "hypertension",
+        "high blood pressure"
+      ]
     ],
     "htn": [
       "HTN",
-      []
+      [
+        "hypertension",
+        "high blood pressure"
+      ]
+    ],
+    "high blood pressure": [
+      "HTN",
+      [
+        "hypertension",
+        "high blood pressure"
+      ]
+    ],
+    "atrial fibrillation": [
+      "AF",
+      [
+        "atrial fibrillation"
+      ]
     ],
     "af": [
       "AF",
-      []
+      [
+        "atrial fibrillation"
+      ]
     ],
     "pah": [
       "PAH",
-      []
+      [
+        "pulmonary arterial hypertension"
+      ]
+    ],
+    "pulmonary arterial hypertension": [
+      "PAH",
+      [
+        "pulmonary arterial hypertension"
+      ]
     ],
     "asthma": [
       "asthma",
-      []
+      [
+        "asthma"
+      ]
+    ],
+    "chronic obstructive pulmonary disease": [
+      "COPD",
+      [
+        "chronic obstructive pulmonary disease"
+      ]
     ],
     "copd": [
       "COPD",
-      []
+      [
+        "chronic obstructive pulmonary disease"
+      ]
+    ],
+    "pulmonary fibrosis": [
+      "IPF",
+      [
+        "idiopathic pulmonary fibrosis",
+        "pulmonary fibrosis"
+      ]
+    ],
+    "idiopathic pulmonary fibrosis": [
+      "IPF",
+      [
+        "idiopathic pulmonary fibrosis",
+        "pulmonary fibrosis"
+      ]
     ],
     "ipf": [
       "IPF",
-      []
+      [
+        "idiopathic pulmonary fibrosis",
+        "pulmonary fibrosis"
+      ]
+    ],
+    "lung adenocarcinoma": [
+      "LUAD",
+      [
+        "lung adenocarcinoma"
+      ]
     ],
     "luad": [
       "LUAD",
-      []
+      [
+        "lung adenocarcinoma"
+      ]
+    ],
+    "non-small cell lung cancer": [
+      "NSCLC",
+      [
+        "non-small cell lung cancer",
+        "non-small cell lung carcinoma"
+      ]
     ],
     "nsclc": [
       "NSCLC",
-      []
+      [
+        "non-small cell lung cancer",
+        "non-small cell lung carcinoma"
+      ]
+    ],
+    "non-small cell lung carcinoma": [
+      "NSCLC",
+      [
+        "non-small cell lung cancer",
+        "non-small cell lung carcinoma"
+      ]
     ],
     "sclc": [
       "SCLC",
-      []
+      [
+        "small cell lung cancer",
+        "small cell lung carcinoma"
+      ]
+    ],
+    "small cell lung cancer": [
+      "SCLC",
+      [
+        "small cell lung cancer",
+        "small cell lung carcinoma"
+      ]
+    ],
+    "small cell lung carcinoma": [
+      "SCLC",
+      [
+        "small cell lung cancer",
+        "small cell lung carcinoma"
+      ]
+    ],
+    "colorectal carcinoma": [
+      "CRC",
+      [
+        "colorectal cancer",
+        "colorectal carcinoma",
+        "colon cancer"
+      ]
     ],
     "crc": [
       "CRC",
-      []
+      [
+        "colorectal cancer",
+        "colorectal carcinoma",
+        "colon cancer"
+      ]
+    ],
+    "colon cancer": [
+      "CRC",
+      [
+        "colorectal cancer",
+        "colorectal carcinoma",
+        "colon cancer"
+      ]
+    ],
+    "colorectal cancer": [
+      "CRC",
+      [
+        "colorectal cancer",
+        "colorectal carcinoma",
+        "colon cancer"
+      ]
+    ],
+    "hepatocellular carcinoma": [
+      "HCC",
+      [
+        "hepatocellular carcinoma",
+        "liver cancer"
+      ]
     ],
     "hcc": [
       "HCC",
-      []
+      [
+        "hepatocellular carcinoma",
+        "liver cancer"
+      ]
+    ],
+    "liver cancer": [
+      "HCC",
+      [
+        "hepatocellular carcinoma",
+        "liver cancer"
+      ]
+    ],
+    "bile duct cancer": [
+      "CCA",
+      [
+        "cholangiocarcinoma",
+        "bile duct cancer"
+      ]
+    ],
+    "cholangiocarcinoma": [
+      "CCA",
+      [
+        "cholangiocarcinoma",
+        "bile duct cancer"
+      ]
     ],
     "cca": [
       "CCA",
-      []
+      [
+        "cholangiocarcinoma",
+        "bile duct cancer"
+      ]
+    ],
+    "prostate adenocarcinoma": [
+      "PCa",
+      [
+        "prostate cancer",
+        "prostate adenocarcinoma"
+      ]
     ],
     "pca": [
       "PCa",
-      []
+      [
+        "prostate cancer",
+        "prostate adenocarcinoma"
+      ]
+    ],
+    "prostate cancer": [
+      "PCa",
+      [
+        "prostate cancer",
+        "prostate adenocarcinoma"
+      ]
+    ],
+    "breast cancer": [
+      "BC",
+      [
+        "breast cancer",
+        "breast carcinoma"
+      ]
+    ],
+    "breast carcinoma": [
+      "BC",
+      [
+        "breast cancer",
+        "breast carcinoma"
+      ]
     ],
     "bc": [
       "BC",
-      []
+      [
+        "breast cancer",
+        "breast carcinoma"
+      ]
+    ],
+    "ovarian cancer": [
+      "OC",
+      [
+        "ovarian cancer",
+        "ovarian carcinoma"
+      ]
     ],
     "oc": [
       "OC",
-      []
+      [
+        "ovarian cancer",
+        "ovarian carcinoma"
+      ]
+    ],
+    "ovarian carcinoma": [
+      "OC",
+      [
+        "ovarian cancer",
+        "ovarian carcinoma"
+      ]
+    ],
+    "glioblastoma multiforme": [
+      "GBM",
+      [
+        "glioblastoma",
+        "glioblastoma multiforme"
+      ]
+    ],
+    "glioblastoma": [
+      "GBM",
+      [
+        "glioblastoma",
+        "glioblastoma multiforme"
+      ]
     ],
     "gbm": [
       "GBM",
-      []
+      [
+        "glioblastoma",
+        "glioblastoma multiforme"
+      ]
     ],
     "mm": [
       "MM",
-      []
+      [
+        "multiple myeloma"
+      ]
+    ],
+    "multiple myeloma": [
+      "MM",
+      [
+        "multiple myeloma"
+      ]
+    ],
+    "acute myeloid leukaemia": [
+      "AML",
+      [
+        "acute myeloid leukemia",
+        "acute myeloid leukaemia"
+      ]
+    ],
+    "acute myeloid leukemia": [
+      "AML",
+      [
+        "acute myeloid leukemia",
+        "acute myeloid leukaemia"
+      ]
     ],
     "aml": [
       "AML",
-      []
+      [
+        "acute myeloid leukemia",
+        "acute myeloid leukaemia"
+      ]
     ],
     "all": [
       "ALL",
-      []
+      [
+        "acute lymphoblastic leukemia",
+        "acute lymphoblastic leukaemia"
+      ]
+    ],
+    "acute lymphoblastic leukemia": [
+      "ALL",
+      [
+        "acute lymphoblastic leukemia",
+        "acute lymphoblastic leukaemia"
+      ]
+    ],
+    "acute lymphoblastic leukaemia": [
+      "ALL",
+      [
+        "acute lymphoblastic leukemia",
+        "acute lymphoblastic leukaemia"
+      ]
+    ],
+    "chronic lymphocytic leukaemia": [
+      "CLL",
+      [
+        "chronic lymphocytic leukemia",
+        "chronic lymphocytic leukaemia"
+      ]
     ],
     "cll": [
       "CLL",
-      []
+      [
+        "chronic lymphocytic leukemia",
+        "chronic lymphocytic leukaemia"
+      ]
+    ],
+    "chronic lymphocytic leukemia": [
+      "CLL",
+      [
+        "chronic lymphocytic leukemia",
+        "chronic lymphocytic leukaemia"
+      ]
+    ],
+    "diffuse large b-cell lymphoma": [
+      "DLBCL",
+      [
+        "diffuse large b-cell lymphoma"
+      ]
     ],
     "dlbcl": [
       "DLBCL",
-      []
+      [
+        "diffuse large b-cell lymphoma"
+      ]
     ],
     "pdac": [
       "PDAC",
-      []
+      [
+        "pancreatic ductal adenocarcinoma",
+        "pancreatic cancer"
+      ]
+    ],
+    "pancreatic cancer": [
+      "PDAC",
+      [
+        "pancreatic ductal adenocarcinoma",
+        "pancreatic cancer"
+      ]
+    ],
+    "pancreatic ductal adenocarcinoma": [
+      "PDAC",
+      [
+        "pancreatic ductal adenocarcinoma",
+        "pancreatic cancer"
+      ]
+    ],
+    "renal cell carcinoma": [
+      "RCC",
+      [
+        "renal cell carcinoma",
+        "kidney cancer"
+      ]
+    ],
+    "kidney cancer": [
+      "RCC",
+      [
+        "renal cell carcinoma",
+        "kidney cancer"
+      ]
     ],
     "rcc": [
       "RCC",
-      []
+      [
+        "renal cell carcinoma",
+        "kidney cancer"
+      ]
     ],
     "ccrcc": [
       "ccRCC",
-      []
+      [
+        "clear cell renal cell carcinoma"
+      ]
+    ],
+    "clear cell renal cell carcinoma": [
+      "ccRCC",
+      [
+        "clear cell renal cell carcinoma"
+      ]
+    ],
+    "stomach cancer": [
+      "GC",
+      [
+        "gastric cancer",
+        "stomach cancer"
+      ]
     ],
     "gc": [
       "GC",
-      []
+      [
+        "gastric cancer",
+        "stomach cancer"
+      ]
+    ],
+    "gastric cancer": [
+      "GC",
+      [
+        "gastric cancer",
+        "stomach cancer"
+      ]
+    ],
+    "bladder cancer": [
+      "BLC",
+      [
+        "bladder cancer",
+        "bladder carcinoma"
+      ]
+    ],
+    "bladder carcinoma": [
+      "BLC",
+      [
+        "bladder cancer",
+        "bladder carcinoma"
+      ]
     ],
     "blc": [
       "BLC",
-      []
+      [
+        "bladder cancer",
+        "bladder carcinoma"
+      ]
+    ],
+    "cutaneous melanoma": [
+      "MEL",
+      [
+        "melanoma",
+        "cutaneous melanoma"
+      ]
     ],
     "mel": [
       "MEL",
-      []
+      [
+        "melanoma",
+        "cutaneous melanoma"
+      ]
+    ],
+    "melanoma": [
+      "MEL",
+      [
+        "melanoma",
+        "cutaneous melanoma"
+      ]
     ],
     "ad": [
       "AD",
-      []
+      [
+        "alzheimer disease",
+        "alzheimer's disease"
+      ]
+    ],
+    "alzheimer disease": [
+      "AD",
+      [
+        "alzheimer disease",
+        "alzheimer's disease"
+      ]
+    ],
+    "alzheimer's disease": [
+      "AD",
+      [
+        "alzheimer disease",
+        "alzheimer's disease"
+      ]
     ],
     "pd": [
       "PD",
-      []
+      [
+        "parkinson disease",
+        "parkinson's disease"
+      ]
+    ],
+    "parkinson's disease": [
+      "PD",
+      [
+        "parkinson disease",
+        "parkinson's disease"
+      ]
+    ],
+    "parkinson disease": [
+      "PD",
+      [
+        "parkinson disease",
+        "parkinson's disease"
+      ]
+    ],
+    "multiple sclerosis": [
+      "MS",
+      [
+        "multiple sclerosis"
+      ]
     ],
     "ms": [
       "MS",
-      []
+      [
+        "multiple sclerosis"
+      ]
+    ],
+    "motor neuron disease": [
+      "ALS",
+      [
+        "amyotrophic lateral sclerosis",
+        "motor neuron disease"
+      ]
     ],
     "als": [
       "ALS",
-      []
+      [
+        "amyotrophic lateral sclerosis",
+        "motor neuron disease"
+      ]
+    ],
+    "amyotrophic lateral sclerosis": [
+      "ALS",
+      [
+        "amyotrophic lateral sclerosis",
+        "motor neuron disease"
+      ]
+    ],
+    "huntington disease": [
+      "HD",
+      [
+        "huntington disease",
+        "huntington's disease"
+      ]
+    ],
+    "huntington's disease": [
+      "HD",
+      [
+        "huntington disease",
+        "huntington's disease"
+      ]
     ],
     "hd": [
       "HD",
-      []
+      [
+        "huntington disease",
+        "huntington's disease"
+      ]
     ],
     "schizophrenia": [
       "schizophrenia",
-      []
+      [
+        "schizophrenia"
+      ]
+    ],
+    "depression": [
+      "MDD",
+      [
+        "major depressive disorder",
+        "depression"
+      ]
     ],
     "mdd": [
       "MDD",
-      []
+      [
+        "major depressive disorder",
+        "depression"
+      ]
+    ],
+    "major depressive disorder": [
+      "MDD",
+      [
+        "major depressive disorder",
+        "depression"
+      ]
     ],
     "sepsis": [
       "sepsis",
-      []
+      [
+        "sepsis",
+        "septic shock"
+      ]
+    ],
+    "septic shock": [
+      "sepsis",
+      [
+        "sepsis",
+        "septic shock"
+      ]
     ],
     "covid19": [
       "COVID19",
-      []
+      [
+        "covid-19",
+        "covid19",
+        "sars-cov-2 infection"
+      ]
+    ],
+    "sars-cov-2 infection": [
+      "COVID19",
+      [
+        "covid-19",
+        "covid19",
+        "sars-cov-2 infection"
+      ]
+    ],
+    "covid-19": [
+      "COVID19",
+      [
+        "covid-19",
+        "covid19",
+        "sars-cov-2 infection"
+      ]
+    ],
+    "hiv infection": [
+      "HIV",
+      [
+        "hiv infection",
+        "aids"
+      ]
+    ],
+    "aids": [
+      "HIV",
+      [
+        "hiv infection",
+        "aids"
+      ]
     ],
     "hiv": [
       "HIV",
-      []
+      [
+        "hiv infection",
+        "aids"
+      ]
     ],
     "tb": [
       "TB",
-      []
+      [
+        "tuberculosis"
+      ]
+    ],
+    "tuberculosis": [
+      "TB",
+      [
+        "tuberculosis"
+      ]
     ],
     "psoriasis": [
       "psoriasis",
-      []
+      [
+        "psoriasis"
+      ]
     ],
     "atopic_dermatitis": [
       "atopic_dermatitis",
-      []
+      [
+        "atopic dermatitis",
+        "eczema"
+      ]
+    ],
+    "atopic dermatitis": [
+      "atopic_dermatitis",
+      [
+        "atopic dermatitis",
+        "eczema"
+      ]
+    ],
+    "eczema": [
+      "atopic_dermatitis",
+      [
+        "atopic dermatitis",
+        "eczema"
+      ]
     ],
     "osteoarthritis": [
       "osteoarthritis",
-      []
+      [
+        "osteoarthritis"
+      ]
     ],
     "osteoporosis": [
       "osteoporosis",
-      []
+      [
+        "osteoporosis"
+      ]
     ]
   },
   "disease_exclusions": {
@@ -406,96 +1501,150 @@
     ]
   },
   "cell_type_table": {
-    "fibrillovesicular cell": [
+    "cortical thick ascending limb": [
       "C_TAL",
       [
-        "tuft cell",
-        "brush cell",
-        "caveolated cell",
-        "fibrillovesicular cell",
-        "multivesicular cell",
-        "peculiar cell"
+        "thick ascending limb",
+        "TAL",
+        "cortical thick ascending limb",
+        "medullary thick ascending limb",
+        "loop of Henle",
+        "kidney loop of Henle thick ascending limb epithelial cell"
       ]
     ],
-    "caveolated cell": [
+    "medullary thick ascending limb": [
       "C_TAL",
       [
-        "tuft cell",
-        "brush cell",
-        "caveolated cell",
-        "fibrillovesicular cell",
-        "multivesicular cell",
-        "peculiar cell"
+        "thick ascending limb",
+        "TAL",
+        "cortical thick ascending limb",
+        "medullary thick ascending limb",
+        "loop of Henle",
+        "kidney loop of Henle thick ascending limb epithelial cell"
       ]
     ],
-    "brush cell": [
+    "loop of henle": [
       "C_TAL",
       [
-        "tuft cell",
-        "brush cell",
-        "caveolated cell",
-        "fibrillovesicular cell",
-        "multivesicular cell",
-        "peculiar cell"
+        "thick ascending limb",
+        "TAL",
+        "cortical thick ascending limb",
+        "medullary thick ascending limb",
+        "loop of Henle",
+        "kidney loop of Henle thick ascending limb epithelial cell"
+      ]
+    ],
+    "thick ascending limb": [
+      "C_TAL",
+      [
+        "thick ascending limb",
+        "TAL",
+        "cortical thick ascending limb",
+        "medullary thick ascending limb",
+        "loop of Henle",
+        "kidney loop of Henle thick ascending limb epithelial cell"
+      ]
+    ],
+    "tal": [
+      "C_TAL",
+      [
+        "thick ascending limb",
+        "TAL",
+        "cortical thick ascending limb",
+        "medullary thick ascending limb",
+        "loop of Henle",
+        "kidney loop of Henle thick ascending limb epithelial cell"
+      ]
+    ],
+    "kidney loop of henle thick ascending limb epithelial cell": [
+      "C_TAL",
+      [
+        "thick ascending limb",
+        "TAL",
+        "cortical thick ascending limb",
+        "medullary thick ascending limb",
+        "loop of Henle",
+        "kidney loop of Henle thick ascending limb epithelial cell"
       ]
     ],
     "c_tal": [
       "C_TAL",
       [
-        "tuft cell",
-        "brush cell",
-        "caveolated cell",
-        "fibrillovesicular cell",
-        "multivesicular cell",
-        "peculiar cell"
-      ]
-    ],
-    "peculiar cell": [
-      "C_TAL",
-      [
-        "tuft cell",
-        "brush cell",
-        "caveolated cell",
-        "fibrillovesicular cell",
-        "multivesicular cell",
-        "peculiar cell"
-      ]
-    ],
-    "tuft cell": [
-      "C_TAL",
-      [
-        "tuft cell",
-        "brush cell",
-        "caveolated cell",
-        "fibrillovesicular cell",
-        "multivesicular cell",
-        "peculiar cell"
-      ]
-    ],
-    "multivesicular cell": [
-      "C_TAL",
-      [
-        "tuft cell",
-        "brush cell",
-        "caveolated cell",
-        "fibrillovesicular cell",
-        "multivesicular cell",
-        "peculiar cell"
-      ]
-    ],
-    "ipt": [
-      "iPT",
-      [
-        "kidney loop of Henle thin ascending limb epithelial cell"
+        "thick ascending limb",
+        "TAL",
+        "cortical thick ascending limb",
+        "medullary thick ascending limb",
+        "loop of Henle",
+        "kidney loop of Henle thick ascending limb epithelial cell"
       ]
     ],
     "kidney loop of henle thin ascending limb epithelial cell": [
       "tubular",
       [
+        "tubular cell",
+        "renal tubular cell",
+        "kidney loop of Henle thin ascending limb epithelial cell"
+      ]
+    ],
+    "proximal tubular cell": [
+      "iPT",
+      [
+        "proximal tubule",
+        "proximal tubular cell",
+        "PT",
+        "kidney loop of Henle thin ascending limb epithelial cell"
+      ]
+    ],
+    "pt": [
+      "iPT",
+      [
+        "proximal tubule",
+        "proximal tubular cell",
+        "PT",
+        "kidney loop of Henle thin ascending limb epithelial cell"
+      ]
+    ],
+    "ipt": [
+      "iPT",
+      [
+        "proximal tubule",
+        "proximal tubular cell",
+        "PT",
+        "kidney loop of Henle thin ascending limb epithelial cell"
+      ]
+    ],
+    "proximal tubule": [
+      "iPT",
+      [
+        "proximal tubule",
+        "proximal tubular cell",
+        "PT",
         "kidney loop of Henle thin ascending limb epithelial cell"
       ]
     ],
     "glomerular visceral epithelial cell": [
+      "Podo",
+      [
+        "podocyte",
+        "epithelial cell of visceral layer of glomerular capsule",
+        "glomerular podocyte",
+        "glomerular visceral epithelial cell",
+        "kidney podocyte",
+        "renal podocyte"
+      ]
+    ],
+    "kidney podocyte": [
+      "Podo",
+      [
+        "podocyte",
+        "epithelial cell of visceral layer of glomerular capsule",
+        "glomerular podocyte",
+        "glomerular visceral epithelial cell",
+        "kidney podocyte",
+        "renal podocyte"
+      ]
+    ],
+    "podo": [
       "Podo",
       [
         "podocyte",
@@ -528,7 +1677,7 @@
         "renal podocyte"
       ]
     ],
-    "kidney podocyte": [
+    "renal podocyte": [
       "Podo",
       [
         "podocyte",
@@ -550,37 +1699,34 @@
         "renal podocyte"
       ]
     ],
-    "renal podocyte": [
-      "Podo",
+    "tubular cell": [
+      "tubular",
       [
-        "podocyte",
-        "epithelial cell of visceral layer of glomerular capsule",
-        "glomerular podocyte",
-        "glomerular visceral epithelial cell",
-        "kidney podocyte",
-        "renal podocyte"
-      ]
-    ],
-    "podo": [
-      "Podo",
-      [
-        "podocyte",
-        "epithelial cell of visceral layer of glomerular capsule",
-        "glomerular podocyte",
-        "glomerular visceral epithelial cell",
-        "kidney podocyte",
-        "renal podocyte"
+        "tubular cell",
+        "renal tubular cell",
+        "kidney loop of Henle thin ascending limb epithelial cell"
       ]
     ],
     "tubular": [
       "tubular",
       [
+        "tubular cell",
+        "renal tubular cell",
         "kidney loop of Henle thin ascending limb epithelial cell"
       ]
     ],
-    "intraglomerular mesangial cell": [
+    "renal tubular cell": [
+      "tubular",
+      [
+        "tubular cell",
+        "renal tubular cell",
+        "kidney loop of Henle thin ascending limb epithelial cell"
+      ]
+    ],
+    "mesangial cell": [
       "MC",
       [
+        "mesangial cell",
         "glomerular mesangial cell",
         "intraglomerular mesangial cell"
       ]
@@ -588,6 +1734,7 @@
     "glomerular mesangial cell": [
       "MC",
       [
+        "mesangial cell",
         "glomerular mesangial cell",
         "intraglomerular mesangial cell"
       ]
@@ -595,19 +1742,37 @@
     "mc": [
       "MC",
       [
+        "mesangial cell",
         "glomerular mesangial cell",
         "intraglomerular mesangial cell"
       ]
     ],
-    "glomerular capillary endothelial cell": [
+    "intraglomerular mesangial cell": [
+      "MC",
+      [
+        "mesangial cell",
+        "glomerular mesangial cell",
+        "intraglomerular mesangial cell"
+      ]
+    ],
+    "glomerular endothelial cell": [
       "EC_glom",
       [
+        "glomerular endothelial cell",
         "glomerular capillary endothelial cell"
       ]
     ],
     "ec_glom": [
       "EC_glom",
       [
+        "glomerular endothelial cell",
+        "glomerular capillary endothelial cell"
+      ]
+    ],
+    "glomerular capillary endothelial cell": [
+      "EC_glom",
+      [
+        "glomerular endothelial cell",
         "glomerular capillary endothelial cell"
       ]
     ],
@@ -632,19 +1797,84 @@
         "MFB"
       ]
     ],
-    "pc": [
-      "PC",
-      [
-        "cardiac endothelial cell"
-      ]
-    ],
     "cardiac endothelial cell": [
       "PC",
       [
         "cardiac endothelial cell"
       ]
     ],
+    "pc": [
+      "PC",
+      [
+        "cardiac endothelial cell"
+      ]
+    ],
+    "plasmacytoid dendritic cell": [
+      "pDC",
+      [
+        "plasmacytoid dendritic cell",
+        "DC2",
+        "interferon-producing cell",
+        "IPC",
+        "lymphoid dendritic cell",
+        "pDC",
+        "plasmacytoid monocyte",
+        "plasmacytoid T cell"
+      ]
+    ],
+    "dc2": [
+      "pDC",
+      [
+        "plasmacytoid dendritic cell",
+        "DC2",
+        "interferon-producing cell",
+        "IPC",
+        "lymphoid dendritic cell",
+        "pDC",
+        "plasmacytoid monocyte",
+        "plasmacytoid T cell"
+      ]
+    ],
     "interferon-producing cell": [
+      "pDC",
+      [
+        "plasmacytoid dendritic cell",
+        "DC2",
+        "interferon-producing cell",
+        "IPC",
+        "lymphoid dendritic cell",
+        "pDC",
+        "plasmacytoid monocyte",
+        "plasmacytoid T cell"
+      ]
+    ],
+    "pdc": [
+      "pDC",
+      [
+        "plasmacytoid dendritic cell",
+        "DC2",
+        "interferon-producing cell",
+        "IPC",
+        "lymphoid dendritic cell",
+        "pDC",
+        "plasmacytoid monocyte",
+        "plasmacytoid T cell"
+      ]
+    ],
+    "plasmacytoid monocyte": [
+      "pDC",
+      [
+        "plasmacytoid dendritic cell",
+        "DC2",
+        "interferon-producing cell",
+        "IPC",
+        "lymphoid dendritic cell",
+        "pDC",
+        "plasmacytoid monocyte",
+        "plasmacytoid T cell"
+      ]
+    ],
+    "lymphoid dendritic cell": [
       "pDC",
       [
         "plasmacytoid dendritic cell",
@@ -683,69 +1913,10 @@
         "plasmacytoid T cell"
       ]
     ],
-    "lymphoid dendritic cell": [
-      "pDC",
+    "cd1c-positive myeloid dendritic cell": [
+      "cDC1",
       [
-        "plasmacytoid dendritic cell",
-        "DC2",
-        "interferon-producing cell",
-        "IPC",
-        "lymphoid dendritic cell",
-        "pDC",
-        "plasmacytoid monocyte",
-        "plasmacytoid T cell"
-      ]
-    ],
-    "dc2": [
-      "pDC",
-      [
-        "plasmacytoid dendritic cell",
-        "DC2",
-        "interferon-producing cell",
-        "IPC",
-        "lymphoid dendritic cell",
-        "pDC",
-        "plasmacytoid monocyte",
-        "plasmacytoid T cell"
-      ]
-    ],
-    "plasmacytoid monocyte": [
-      "pDC",
-      [
-        "plasmacytoid dendritic cell",
-        "DC2",
-        "interferon-producing cell",
-        "IPC",
-        "lymphoid dendritic cell",
-        "pDC",
-        "plasmacytoid monocyte",
-        "plasmacytoid T cell"
-      ]
-    ],
-    "plasmacytoid dendritic cell": [
-      "pDC",
-      [
-        "plasmacytoid dendritic cell",
-        "DC2",
-        "interferon-producing cell",
-        "IPC",
-        "lymphoid dendritic cell",
-        "pDC",
-        "plasmacytoid monocyte",
-        "plasmacytoid T cell"
-      ]
-    ],
-    "pdc": [
-      "pDC",
-      [
-        "plasmacytoid dendritic cell",
-        "DC2",
-        "interferon-producing cell",
-        "IPC",
-        "lymphoid dendritic cell",
-        "pDC",
-        "plasmacytoid monocyte",
-        "plasmacytoid T cell"
+        "CD1c-positive myeloid dendritic cell"
       ]
     ],
     "cdc1": [
@@ -754,13 +1925,7 @@
         "CD1c-positive myeloid dendritic cell"
       ]
     ],
-    "cd1c-positive myeloid dendritic cell": [
-      "cDC1",
-      [
-        "CD1c-positive myeloid dendritic cell"
-      ]
-    ],
-    "non-classical monocyte, human": [
+    "cdc2": [
       "cDC2",
       [
         "CD14-low, CD16-positive monocyte",
@@ -774,128 +1939,137 @@
         "non-classical monocyte, human"
       ]
     ],
-    "cdc2": [
+    "non-classical monocyte, human": [
       "cDC2",
       [
         "CD14-low, CD16-positive monocyte",
         "non-classical monocyte, human"
       ]
     ],
-    "suppressor t-lymphocyte": [
+    "suppressor t-cell": [
       "Treg",
       [
         "regulatory T cell",
+        "Tregs",
         "regulatory T lymphocyte",
         "regulatory T-cell",
         "regulatory T-lymphocyte",
         "suppressor T cell",
         "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
-      ]
-    ],
-    "suppressor t cell": [
-      "Treg",
-      [
-        "regulatory T cell",
-        "regulatory T lymphocyte",
-        "regulatory T-cell",
-        "regulatory T-lymphocyte",
-        "suppressor T cell",
-        "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
+        "suppressor T-cell"
       ]
     ],
     "suppressor t lymphocyte": [
       "Treg",
       [
         "regulatory T cell",
+        "Tregs",
         "regulatory T lymphocyte",
         "regulatory T-cell",
         "regulatory T-lymphocyte",
         "suppressor T cell",
         "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
+        "suppressor T-cell"
       ]
     ],
     "regulatory t-lymphocyte": [
       "Treg",
       [
         "regulatory T cell",
+        "Tregs",
         "regulatory T lymphocyte",
         "regulatory T-cell",
         "regulatory T-lymphocyte",
         "suppressor T cell",
         "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
-      ]
-    ],
-    "treg": [
-      "Treg",
-      [
-        "regulatory T cell",
-        "regulatory T lymphocyte",
-        "regulatory T-cell",
-        "regulatory T-lymphocyte",
-        "suppressor T cell",
-        "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
-      ]
-    ],
-    "regulatory t lymphocyte": [
-      "Treg",
-      [
-        "regulatory T cell",
-        "regulatory T lymphocyte",
-        "regulatory T-cell",
-        "regulatory T-lymphocyte",
-        "suppressor T cell",
-        "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
-      ]
-    ],
-    "suppressor t-cell": [
-      "Treg",
-      [
-        "regulatory T cell",
-        "regulatory T lymphocyte",
-        "regulatory T-cell",
-        "regulatory T-lymphocyte",
-        "suppressor T cell",
-        "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
+        "suppressor T-cell"
       ]
     ],
     "regulatory t cell": [
       "Treg",
       [
         "regulatory T cell",
+        "Tregs",
         "regulatory T lymphocyte",
         "regulatory T-cell",
         "regulatory T-lymphocyte",
         "suppressor T cell",
         "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
+        "suppressor T-cell"
+      ]
+    ],
+    "tregs": [
+      "Treg",
+      [
+        "regulatory T cell",
+        "Tregs",
+        "regulatory T lymphocyte",
+        "regulatory T-cell",
+        "regulatory T-lymphocyte",
+        "suppressor T cell",
+        "suppressor T lymphocyte",
+        "suppressor T-cell"
       ]
     ],
     "regulatory t-cell": [
       "Treg",
       [
         "regulatory T cell",
+        "Tregs",
         "regulatory T lymphocyte",
         "regulatory T-cell",
         "regulatory T-lymphocyte",
         "suppressor T cell",
         "suppressor T lymphocyte",
-        "suppressor T-cell",
-        "suppressor T-lymphocyte"
+        "suppressor T-cell"
+      ]
+    ],
+    "suppressor t cell": [
+      "Treg",
+      [
+        "regulatory T cell",
+        "Tregs",
+        "regulatory T lymphocyte",
+        "regulatory T-cell",
+        "regulatory T-lymphocyte",
+        "suppressor T cell",
+        "suppressor T lymphocyte",
+        "suppressor T-cell"
+      ]
+    ],
+    "treg": [
+      "Treg",
+      [
+        "regulatory T cell",
+        "Tregs",
+        "regulatory T lymphocyte",
+        "regulatory T-cell",
+        "regulatory T-lymphocyte",
+        "suppressor T cell",
+        "suppressor T lymphocyte",
+        "suppressor T-cell"
+      ]
+    ],
+    "regulatory t lymphocyte": [
+      "Treg",
+      [
+        "regulatory T cell",
+        "Tregs",
+        "regulatory T lymphocyte",
+        "regulatory T-cell",
+        "regulatory T-lymphocyte",
+        "suppressor T cell",
+        "suppressor T lymphocyte",
+        "suppressor T-cell"
+      ]
+    ],
+    "cd4-positive, alpha-beta t-cell": [
+      "CD4T",
+      [
+        "CD4-positive, alpha-beta T cell",
+        "CD4-positive, alpha-beta T lymphocyte",
+        "CD4-positive, alpha-beta T-cell",
+        "CD4-positive, alpha-beta T-lymphocyte"
       ]
     ],
     "cd4t": [
@@ -925,15 +2099,6 @@
         "CD4-positive, alpha-beta T-lymphocyte"
       ]
     ],
-    "cd4-positive, alpha-beta t-cell": [
-      "CD4T",
-      [
-        "CD4-positive, alpha-beta T cell",
-        "CD4-positive, alpha-beta T lymphocyte",
-        "CD4-positive, alpha-beta T-cell",
-        "CD4-positive, alpha-beta T-lymphocyte"
-      ]
-    ],
     "cd4-positive, alpha-beta t cell": [
       "CD4T",
       [
@@ -943,25 +2108,7 @@
         "CD4-positive, alpha-beta T-lymphocyte"
       ]
     ],
-    "cd8-positive, alpha-beta t-lymphocyte": [
-      "CD8T",
-      [
-        "CD8-positive, alpha-beta T cell",
-        "CD8-positive, alpha-beta T lymphocyte",
-        "CD8-positive, alpha-beta T-cell",
-        "CD8-positive, alpha-beta T-lymphocyte"
-      ]
-    ],
     "cd8-positive, alpha-beta t cell": [
-      "CD8T",
-      [
-        "CD8-positive, alpha-beta T cell",
-        "CD8-positive, alpha-beta T lymphocyte",
-        "CD8-positive, alpha-beta T-cell",
-        "CD8-positive, alpha-beta T-lymphocyte"
-      ]
-    ],
-    "cd8-positive, alpha-beta t-cell": [
       "CD8T",
       [
         "CD8-positive, alpha-beta T cell",
@@ -979,6 +2126,24 @@
         "CD8-positive, alpha-beta T-lymphocyte"
       ]
     ],
+    "cd8-positive, alpha-beta t-cell": [
+      "CD8T",
+      [
+        "CD8-positive, alpha-beta T cell",
+        "CD8-positive, alpha-beta T lymphocyte",
+        "CD8-positive, alpha-beta T-cell",
+        "CD8-positive, alpha-beta T-lymphocyte"
+      ]
+    ],
+    "cd8-positive, alpha-beta t-lymphocyte": [
+      "CD8T",
+      [
+        "CD8-positive, alpha-beta T cell",
+        "CD8-positive, alpha-beta T lymphocyte",
+        "CD8-positive, alpha-beta T-cell",
+        "CD8-positive, alpha-beta T-lymphocyte"
+      ]
+    ],
     "cd8-positive, alpha-beta t lymphocyte": [
       "CD8T",
       [
@@ -988,7 +2153,7 @@
         "CD8-positive, alpha-beta T-lymphocyte"
       ]
     ],
-    "nk cell": [
+    "nk": [
       "NK",
       [
         "natural killer cell",
@@ -1006,7 +2171,16 @@
         "null cell"
       ]
     ],
-    "nk": [
+    "large granular lymphocyte": [
+      "NK",
+      [
+        "natural killer cell",
+        "large granular lymphocyte",
+        "NK cell",
+        "null cell"
+      ]
+    ],
+    "nk cell": [
       "NK",
       [
         "natural killer cell",
@@ -1024,43 +2198,7 @@
         "null cell"
       ]
     ],
-    "large granular lymphocyte": [
-      "NK",
-      [
-        "natural killer cell",
-        "large granular lymphocyte",
-        "NK cell",
-        "null cell"
-      ]
-    ],
-    "b cell": [
-      "B",
-      [
-        "B cell",
-        "B lymphocyte",
-        "B-cell",
-        "B-lymphocyte"
-      ]
-    ],
     "b-lymphocyte": [
-      "B",
-      [
-        "B cell",
-        "B lymphocyte",
-        "B-cell",
-        "B-lymphocyte"
-      ]
-    ],
-    "b": [
-      "B",
-      [
-        "B cell",
-        "B lymphocyte",
-        "B-cell",
-        "B-lymphocyte"
-      ]
-    ],
-    "b-cell": [
       "B",
       [
         "B cell",
@@ -1078,7 +2216,34 @@
         "B-lymphocyte"
       ]
     ],
-    "immature b-lymphocyte": [
+    "b-cell": [
+      "B",
+      [
+        "B cell",
+        "B lymphocyte",
+        "B-cell",
+        "B-lymphocyte"
+      ]
+    ],
+    "b cell": [
+      "B",
+      [
+        "B cell",
+        "B lymphocyte",
+        "B-cell",
+        "B-lymphocyte"
+      ]
+    ],
+    "b": [
+      "B",
+      [
+        "B cell",
+        "B lymphocyte",
+        "B-cell",
+        "B-lymphocyte"
+      ]
+    ],
+    "immature b cell": [
       "PB",
       [
         "immature B cell",
@@ -1098,7 +2263,7 @@
         "newly formed B cell"
       ]
     ],
-    "pb": [
+    "immature b-lymphocyte": [
       "PB",
       [
         "immature B cell",
@@ -1118,16 +2283,6 @@
         "newly formed B cell"
       ]
     ],
-    "immature b cell": [
-      "PB",
-      [
-        "immature B cell",
-        "immature B lymphocyte",
-        "immature B-cell",
-        "immature B-lymphocyte",
-        "newly formed B cell"
-      ]
-    ],
     "newly formed b cell": [
       "PB",
       [
@@ -1138,7 +2293,41 @@
         "newly formed B cell"
       ]
     ],
-    "plasma b-cell": [
+    "pb": [
+      "PB",
+      [
+        "immature B cell",
+        "immature B lymphocyte",
+        "immature B-cell",
+        "immature B-lymphocyte",
+        "newly formed B cell"
+      ]
+    ],
+    "plasma cell": [
+      "PC_imm",
+      [
+        "plasma cell",
+        "effector B cell",
+        "effector B-cell",
+        "plasma B cell",
+        "plasma B-cell",
+        "plasmacyte",
+        "plasmocyte"
+      ]
+    ],
+    "plasmacyte": [
+      "PC_imm",
+      [
+        "plasma cell",
+        "effector B cell",
+        "effector B-cell",
+        "plasma B cell",
+        "plasma B-cell",
+        "plasmacyte",
+        "plasmocyte"
+      ]
+    ],
+    "effector b cell": [
       "PC_imm",
       [
         "plasma cell",
@@ -1174,31 +2363,7 @@
         "plasmocyte"
       ]
     ],
-    "plasmacyte": [
-      "PC_imm",
-      [
-        "plasma cell",
-        "effector B cell",
-        "effector B-cell",
-        "plasma B cell",
-        "plasma B-cell",
-        "plasmacyte",
-        "plasmocyte"
-      ]
-    ],
     "effector b-cell": [
-      "PC_imm",
-      [
-        "plasma cell",
-        "effector B cell",
-        "effector B-cell",
-        "plasma B cell",
-        "plasma B-cell",
-        "plasmacyte",
-        "plasmocyte"
-      ]
-    ],
-    "effector b cell": [
       "PC_imm",
       [
         "plasma cell",
@@ -1222,7 +2387,7 @@
         "plasmocyte"
       ]
     ],
-    "plasma cell": [
+    "plasma b-cell": [
       "PC_imm",
       [
         "plasma cell",
@@ -1246,7 +2411,7 @@
         "monocyte"
       ]
     ],
-    "macro": [
+    "histiocyte": [
       "Macro",
       [
         "macrophage",
@@ -1260,7 +2425,7 @@
         "histiocyte"
       ]
     ],
-    "histiocyte": [
+    "macro": [
       "Macro",
       [
         "macrophage",
@@ -1268,6 +2433,14 @@
       ]
     ],
     "m1": [
+      "M1",
+      [
+        "M1 macrophage",
+        "classically activated macrophage",
+        "inflammatory macrophage"
+      ]
+    ],
+    "classically activated macrophage": [
       "M1",
       [
         "M1 macrophage",
@@ -1291,31 +2464,7 @@
         "inflammatory macrophage"
       ]
     ],
-    "classically activated macrophage": [
-      "M1",
-      [
-        "M1 macrophage",
-        "classically activated macrophage",
-        "inflammatory macrophage"
-      ]
-    ],
-    "m2 macrophage": [
-      "M2",
-      [
-        "M2 macrophage",
-        "alternatively activated macrophage",
-        "anti-inflammatory macrophage"
-      ]
-    ],
     "alternatively activated macrophage": [
-      "M2",
-      [
-        "M2 macrophage",
-        "alternatively activated macrophage",
-        "anti-inflammatory macrophage"
-      ]
-    ],
-    "anti-inflammatory macrophage": [
       "M2",
       [
         "M2 macrophage",
@@ -1331,7 +2480,23 @@
         "anti-inflammatory macrophage"
       ]
     ],
-    "poly": [
+    "anti-inflammatory macrophage": [
+      "M2",
+      [
+        "M2 macrophage",
+        "alternatively activated macrophage",
+        "anti-inflammatory macrophage"
+      ]
+    ],
+    "m2 macrophage": [
+      "M2",
+      [
+        "M2 macrophage",
+        "alternatively activated macrophage",
+        "anti-inflammatory macrophage"
+      ]
+    ],
+    "neutrophil leukocyte": [
       "Neut",
       [
         "neutrophil",
@@ -1357,6 +2522,32 @@
         "poly"
       ]
     ],
+    "neutrophilic leucocyte": [
+      "Neut",
+      [
+        "neutrophil",
+        "neutrocyte",
+        "neutrophil leucocyte",
+        "neutrophil leukocyte",
+        "neutrophilic leucocyte",
+        "neutrophilic leukocyte",
+        "PMN",
+        "poly"
+      ]
+    ],
+    "poly": [
+      "Neut",
+      [
+        "neutrophil",
+        "neutrocyte",
+        "neutrophil leucocyte",
+        "neutrophil leukocyte",
+        "neutrophilic leucocyte",
+        "neutrophilic leukocyte",
+        "PMN",
+        "poly"
+      ]
+    ],
     "neutrophil": [
       "Neut",
       [
@@ -1370,7 +2561,7 @@
         "poly"
       ]
     ],
-    "neutrophilic leucocyte": [
+    "neutrophil leucocyte": [
       "Neut",
       [
         "neutrophil",
@@ -1409,19 +2600,6 @@
         "poly"
       ]
     ],
-    "neutrophil leucocyte": [
-      "Neut",
-      [
-        "neutrophil",
-        "neutrocyte",
-        "neutrophil leucocyte",
-        "neutrophil leukocyte",
-        "neutrophilic leucocyte",
-        "neutrophilic leukocyte",
-        "PMN",
-        "poly"
-      ]
-    ],
     "pmn": [
       "Neut",
       [
@@ -1435,44 +2613,19 @@
         "poly"
       ]
     ],
-    "neutrophil leukocyte": [
-      "Neut",
+    "eosinophilic granulocyte": [
+      "Eos",
       [
-        "neutrophil",
-        "neutrocyte",
-        "neutrophil leucocyte",
-        "neutrophil leukocyte",
-        "neutrophilic leucocyte",
-        "neutrophilic leukocyte",
-        "PMN",
-        "poly"
+        "eosinophil",
+        "eosinocyte",
+        "eosinophilic granulocyte",
+        "eosinophilic leucocyte",
+        "eosinophilic leukocyte",
+        "polymorphonuclear leucocyte",
+        "polymorphonuclear leukocyte"
       ]
     ],
     "eosinophil": [
-      "Eos",
-      [
-        "eosinophil",
-        "eosinocyte",
-        "eosinophilic granulocyte",
-        "eosinophilic leucocyte",
-        "eosinophilic leukocyte",
-        "polymorphonuclear leucocyte",
-        "polymorphonuclear leukocyte"
-      ]
-    ],
-    "eosinophilic leucocyte": [
-      "Eos",
-      [
-        "eosinophil",
-        "eosinocyte",
-        "eosinophilic granulocyte",
-        "eosinophilic leucocyte",
-        "eosinophilic leukocyte",
-        "polymorphonuclear leucocyte",
-        "polymorphonuclear leukocyte"
-      ]
-    ],
-    "polymorphonuclear leucocyte": [
       "Eos",
       [
         "eosinophil",
@@ -1496,7 +2649,31 @@
         "polymorphonuclear leukocyte"
       ]
     ],
+    "eosinophilic leucocyte": [
+      "Eos",
+      [
+        "eosinophil",
+        "eosinocyte",
+        "eosinophilic granulocyte",
+        "eosinophilic leucocyte",
+        "eosinophilic leukocyte",
+        "polymorphonuclear leucocyte",
+        "polymorphonuclear leukocyte"
+      ]
+    ],
     "polymorphonuclear leukocyte": [
+      "Eos",
+      [
+        "eosinophil",
+        "eosinocyte",
+        "eosinophilic granulocyte",
+        "eosinophilic leucocyte",
+        "eosinophilic leukocyte",
+        "polymorphonuclear leucocyte",
+        "polymorphonuclear leukocyte"
+      ]
+    ],
+    "polymorphonuclear leucocyte": [
       "Eos",
       [
         "eosinophil",
@@ -1532,39 +2709,7 @@
         "polymorphonuclear leukocyte"
       ]
     ],
-    "eosinophilic granulocyte": [
-      "Eos",
-      [
-        "eosinophil",
-        "eosinocyte",
-        "eosinophilic granulocyte",
-        "eosinophilic leucocyte",
-        "eosinophilic leukocyte",
-        "polymorphonuclear leucocyte",
-        "polymorphonuclear leukocyte"
-      ]
-    ],
-    "mastocyte": [
-      "Mast",
-      [
-        "mast cell",
-        "histaminocyte",
-        "labrocyte",
-        "mastocyte",
-        "tissue basophil"
-      ]
-    ],
-    "mast": [
-      "Mast",
-      [
-        "mast cell",
-        "histaminocyte",
-        "labrocyte",
-        "mastocyte",
-        "tissue basophil"
-      ]
-    ],
-    "histaminocyte": [
+    "labrocyte": [
       "Mast",
       [
         "mast cell",
@@ -1594,7 +2739,27 @@
         "tissue basophil"
       ]
     ],
-    "labrocyte": [
+    "mastocyte": [
+      "Mast",
+      [
+        "mast cell",
+        "histaminocyte",
+        "labrocyte",
+        "mastocyte",
+        "tissue basophil"
+      ]
+    ],
+    "histaminocyte": [
+      "Mast",
+      [
+        "mast cell",
+        "histaminocyte",
+        "labrocyte",
+        "mastocyte",
+        "tissue basophil"
+      ]
+    ],
+    "mast": [
       "Mast",
       [
         "mast cell",
@@ -1617,59 +2782,7 @@
         "mature NK T-lymphocyte"
       ]
     ],
-    "mature nk t-lymphocyte": [
-      "NKT",
-      [
-        "mature NK T cell",
-        "mature natural killer T cell",
-        "mature natural killer T lymphocyte",
-        "mature natural killer T-cell",
-        "mature natural killer T-lymphocyte",
-        "mature NK T lymphocyte",
-        "mature NK T-cell",
-        "mature NK T-lymphocyte"
-      ]
-    ],
-    "nkt": [
-      "NKT",
-      [
-        "mature NK T cell",
-        "mature natural killer T cell",
-        "mature natural killer T lymphocyte",
-        "mature natural killer T-cell",
-        "mature natural killer T-lymphocyte",
-        "mature NK T lymphocyte",
-        "mature NK T-cell",
-        "mature NK T-lymphocyte"
-      ]
-    ],
     "mature nk t cell": [
-      "NKT",
-      [
-        "mature NK T cell",
-        "mature natural killer T cell",
-        "mature natural killer T lymphocyte",
-        "mature natural killer T-cell",
-        "mature natural killer T-lymphocyte",
-        "mature NK T lymphocyte",
-        "mature NK T-cell",
-        "mature NK T-lymphocyte"
-      ]
-    ],
-    "mature natural killer t-cell": [
-      "NKT",
-      [
-        "mature NK T cell",
-        "mature natural killer T cell",
-        "mature natural killer T lymphocyte",
-        "mature natural killer T-cell",
-        "mature natural killer T-lymphocyte",
-        "mature NK T lymphocyte",
-        "mature NK T-cell",
-        "mature NK T-lymphocyte"
-      ]
-    ],
-    "mature natural killer t lymphocyte": [
       "NKT",
       [
         "mature NK T cell",
@@ -1708,6 +2821,19 @@
         "mature NK T-lymphocyte"
       ]
     ],
+    "mature natural killer t lymphocyte": [
+      "NKT",
+      [
+        "mature NK T cell",
+        "mature natural killer T cell",
+        "mature natural killer T lymphocyte",
+        "mature natural killer T-cell",
+        "mature natural killer T-lymphocyte",
+        "mature NK T lymphocyte",
+        "mature NK T-cell",
+        "mature NK T-lymphocyte"
+      ]
+    ],
     "mature natural killer t cell": [
       "NKT",
       [
@@ -1721,10 +2847,43 @@
         "mature NK T-lymphocyte"
       ]
     ],
-    "innate lymphoid cell": [
-      "ILC",
+    "mature natural killer t-cell": [
+      "NKT",
       [
-        "innate lymphoid cell"
+        "mature NK T cell",
+        "mature natural killer T cell",
+        "mature natural killer T lymphocyte",
+        "mature natural killer T-cell",
+        "mature natural killer T-lymphocyte",
+        "mature NK T lymphocyte",
+        "mature NK T-cell",
+        "mature NK T-lymphocyte"
+      ]
+    ],
+    "mature nk t-lymphocyte": [
+      "NKT",
+      [
+        "mature NK T cell",
+        "mature natural killer T cell",
+        "mature natural killer T lymphocyte",
+        "mature natural killer T-cell",
+        "mature natural killer T-lymphocyte",
+        "mature NK T lymphocyte",
+        "mature NK T-cell",
+        "mature NK T-lymphocyte"
+      ]
+    ],
+    "nkt": [
+      "NKT",
+      [
+        "mature NK T cell",
+        "mature natural killer T cell",
+        "mature natural killer T lymphocyte",
+        "mature natural killer T-cell",
+        "mature natural killer T-lymphocyte",
+        "mature NK T lymphocyte",
+        "mature NK T-cell",
+        "mature NK T-lymphocyte"
       ]
     ],
     "ilc": [
@@ -1733,7 +2892,13 @@
         "innate lymphoid cell"
       ]
     ],
-    "th1 cd4+ t cell": [
+    "innate lymphoid cell": [
+      "ILC",
+      [
+        "innate lymphoid cell"
+      ]
+    ],
+    "t-helper 1 cell": [
       "Th1",
       [
         "T-helper 1 cell",
@@ -1747,32 +2912,6 @@
       ]
     ],
     "th1 t lymphocyte": [
-      "Th1",
-      [
-        "T-helper 1 cell",
-        "helper T cell type 1",
-        "T helper cells type 1",
-        "T(H)-1 cell",
-        "Th1 CD4+ T cell",
-        "Th1 cell",
-        "Th1 T cell",
-        "Th1 T lymphocyte"
-      ]
-    ],
-    "th1 cell": [
-      "Th1",
-      [
-        "T-helper 1 cell",
-        "helper T cell type 1",
-        "T helper cells type 1",
-        "T(H)-1 cell",
-        "Th1 CD4+ T cell",
-        "Th1 cell",
-        "Th1 T cell",
-        "Th1 T lymphocyte"
-      ]
-    ],
-    "t-helper 1 cell": [
       "Th1",
       [
         "T-helper 1 cell",
@@ -1811,6 +2950,32 @@
         "Th1 T lymphocyte"
       ]
     ],
+    "th1 cd4+ t cell": [
+      "Th1",
+      [
+        "T-helper 1 cell",
+        "helper T cell type 1",
+        "T helper cells type 1",
+        "T(H)-1 cell",
+        "Th1 CD4+ T cell",
+        "Th1 cell",
+        "Th1 T cell",
+        "Th1 T lymphocyte"
+      ]
+    ],
+    "helper t cell type 1": [
+      "Th1",
+      [
+        "T-helper 1 cell",
+        "helper T cell type 1",
+        "T helper cells type 1",
+        "T(H)-1 cell",
+        "Th1 CD4+ T cell",
+        "Th1 cell",
+        "Th1 T cell",
+        "Th1 T lymphocyte"
+      ]
+    ],
     "th1 t cell": [
       "Th1",
       [
@@ -1837,7 +3002,7 @@
         "Th1 T lymphocyte"
       ]
     ],
-    "helper t cell type 1": [
+    "th1 cell": [
       "Th1",
       [
         "T-helper 1 cell",
@@ -1850,7 +3015,46 @@
         "Th1 T lymphocyte"
       ]
     ],
-    "helper t cell type 2": [
+    "t helper cells type 2": [
+      "Th2",
+      [
+        "T-helper 2 cell",
+        "helper T cell type 2",
+        "T helper cells type 2",
+        "T(H)-2 cell",
+        "Th2 cell",
+        "Th2 T cell",
+        "Th2 T lymphocyte",
+        "Th2 T-cell"
+      ]
+    ],
+    "th2 t cell": [
+      "Th2",
+      [
+        "T-helper 2 cell",
+        "helper T cell type 2",
+        "T helper cells type 2",
+        "T(H)-2 cell",
+        "Th2 cell",
+        "Th2 T cell",
+        "Th2 T lymphocyte",
+        "Th2 T-cell"
+      ]
+    ],
+    "th2 t lymphocyte": [
+      "Th2",
+      [
+        "T-helper 2 cell",
+        "helper T cell type 2",
+        "T helper cells type 2",
+        "T(H)-2 cell",
+        "Th2 cell",
+        "Th2 T cell",
+        "Th2 T lymphocyte",
+        "Th2 T-cell"
+      ]
+    ],
+    "t(h)-2 cell": [
       "Th2",
       [
         "T-helper 2 cell",
@@ -1864,6 +3068,19 @@
       ]
     ],
     "t-helper 2 cell": [
+      "Th2",
+      [
+        "T-helper 2 cell",
+        "helper T cell type 2",
+        "T helper cells type 2",
+        "T(H)-2 cell",
+        "Th2 cell",
+        "Th2 T cell",
+        "Th2 T lymphocyte",
+        "Th2 T-cell"
+      ]
+    ],
+    "th2": [
       "Th2",
       [
         "T-helper 2 cell",
@@ -1902,7 +3119,7 @@
         "Th2 T-cell"
       ]
     ],
-    "th2": [
+    "helper t cell type 2": [
       "Th2",
       [
         "T-helper 2 cell",
@@ -1915,59 +3132,7 @@
         "Th2 T-cell"
       ]
     ],
-    "th2 t lymphocyte": [
-      "Th2",
-      [
-        "T-helper 2 cell",
-        "helper T cell type 2",
-        "T helper cells type 2",
-        "T(H)-2 cell",
-        "Th2 cell",
-        "Th2 T cell",
-        "Th2 T lymphocyte",
-        "Th2 T-cell"
-      ]
-    ],
-    "th2 t cell": [
-      "Th2",
-      [
-        "T-helper 2 cell",
-        "helper T cell type 2",
-        "T helper cells type 2",
-        "T(H)-2 cell",
-        "Th2 cell",
-        "Th2 T cell",
-        "Th2 T lymphocyte",
-        "Th2 T-cell"
-      ]
-    ],
-    "t(h)-2 cell": [
-      "Th2",
-      [
-        "T-helper 2 cell",
-        "helper T cell type 2",
-        "T helper cells type 2",
-        "T(H)-2 cell",
-        "Th2 cell",
-        "Th2 T cell",
-        "Th2 T lymphocyte",
-        "Th2 T-cell"
-      ]
-    ],
-    "t helper cells type 2": [
-      "Th2",
-      [
-        "T-helper 2 cell",
-        "helper T cell type 2",
-        "T helper cells type 2",
-        "T(H)-2 cell",
-        "Th2 cell",
-        "Th2 T cell",
-        "Th2 T lymphocyte",
-        "Th2 T-cell"
-      ]
-    ],
-    "il-17-producing cd4+ t helper": [
+    "t(h)-17 cell": [
       "Th17",
       [
         "T-helper 17 cell",
@@ -1980,20 +3145,7 @@
         "Th17 T cell"
       ]
     ],
-    "t-helper 17 cell": [
-      "Th17",
-      [
-        "T-helper 17 cell",
-        "helper T cell type 17",
-        "IL-17-producing CD4+ T helper",
-        "T helper cells type 17",
-        "T(H)-17 cell",
-        "Th17 CD4+ T cell",
-        "Th17 cell",
-        "Th17 T cell"
-      ]
-    ],
-    "th17 cd4+ t cell": [
+    "th17 t cell": [
       "Th17",
       [
         "T-helper 17 cell",
@@ -2032,7 +3184,7 @@
         "Th17 T cell"
       ]
     ],
-    "t(h)-17 cell": [
+    "th17": [
       "Th17",
       [
         "T-helper 17 cell",
@@ -2045,7 +3197,7 @@
         "Th17 T cell"
       ]
     ],
-    "th17 t cell": [
+    "t-helper 17 cell": [
       "Th17",
       [
         "T-helper 17 cell",
@@ -2071,7 +3223,7 @@
         "Th17 T cell"
       ]
     ],
-    "th17": [
+    "il-17-producing cd4+ t helper": [
       "Th17",
       [
         "T-helper 17 cell",
@@ -2084,10 +3236,17 @@
         "Th17 T cell"
       ]
     ],
-    "hepatocyte": [
-      "Hepato",
+    "th17 cd4+ t cell": [
+      "Th17",
       [
-        "hepatocyte"
+        "T-helper 17 cell",
+        "helper T cell type 17",
+        "IL-17-producing CD4+ T helper",
+        "T helper cells type 17",
+        "T(H)-17 cell",
+        "Th17 CD4+ T cell",
+        "Th17 cell",
+        "Th17 T cell"
       ]
     ],
     "hepato": [
@@ -2096,55 +3255,13 @@
         "hepatocyte"
       ]
     ],
-    "kupffer cell": [
-      "Kupffer",
+    "hepatocyte": [
+      "Hepato",
       [
-        "Kupffer cell",
-        "hepatic macrophage",
-        "littoral cell of hepatic sinusoid",
-        "liver macrophage",
-        "macrophagocytus stellatus",
-        "stellate cell of von Kupffer",
-        "von Kupffer cell"
+        "hepatocyte"
       ]
     ],
-    "liver macrophage": [
-      "Kupffer",
-      [
-        "Kupffer cell",
-        "hepatic macrophage",
-        "littoral cell of hepatic sinusoid",
-        "liver macrophage",
-        "macrophagocytus stellatus",
-        "stellate cell of von Kupffer",
-        "von Kupffer cell"
-      ]
-    ],
-    "stellate cell of von kupffer": [
-      "Kupffer",
-      [
-        "Kupffer cell",
-        "hepatic macrophage",
-        "littoral cell of hepatic sinusoid",
-        "liver macrophage",
-        "macrophagocytus stellatus",
-        "stellate cell of von Kupffer",
-        "von Kupffer cell"
-      ]
-    ],
-    "von kupffer cell": [
-      "Kupffer",
-      [
-        "Kupffer cell",
-        "hepatic macrophage",
-        "littoral cell of hepatic sinusoid",
-        "liver macrophage",
-        "macrophagocytus stellatus",
-        "stellate cell of von Kupffer",
-        "von Kupffer cell"
-      ]
-    ],
-    "macrophagocytus stellatus": [
+    "hepatic macrophage": [
       "Kupffer",
       [
         "Kupffer cell",
@@ -2168,7 +3285,31 @@
         "von Kupffer cell"
       ]
     ],
-    "hepatic macrophage": [
+    "stellate cell of von kupffer": [
+      "Kupffer",
+      [
+        "Kupffer cell",
+        "hepatic macrophage",
+        "littoral cell of hepatic sinusoid",
+        "liver macrophage",
+        "macrophagocytus stellatus",
+        "stellate cell of von Kupffer",
+        "von Kupffer cell"
+      ]
+    ],
+    "liver macrophage": [
+      "Kupffer",
+      [
+        "Kupffer cell",
+        "hepatic macrophage",
+        "littoral cell of hepatic sinusoid",
+        "liver macrophage",
+        "macrophagocytus stellatus",
+        "stellate cell of von Kupffer",
+        "von Kupffer cell"
+      ]
+    ],
+    "macrophagocytus stellatus": [
       "Kupffer",
       [
         "Kupffer cell",
@@ -2192,16 +3333,28 @@
         "von Kupffer cell"
       ]
     ],
-    "ito cell": [
-      "HSC",
+    "kupffer cell": [
+      "Kupffer",
       [
-        "hepatic stellate cell",
-        "fat-storing cell",
-        "hepatic perisinusoidal cell",
-        "Ito cell",
-        "lipocyte",
-        "perisinusoidal cell",
-        "vitamin A-storing cells"
+        "Kupffer cell",
+        "hepatic macrophage",
+        "littoral cell of hepatic sinusoid",
+        "liver macrophage",
+        "macrophagocytus stellatus",
+        "stellate cell of von Kupffer",
+        "von Kupffer cell"
+      ]
+    ],
+    "von kupffer cell": [
+      "Kupffer",
+      [
+        "Kupffer cell",
+        "hepatic macrophage",
+        "littoral cell of hepatic sinusoid",
+        "liver macrophage",
+        "macrophagocytus stellatus",
+        "stellate cell of von Kupffer",
+        "von Kupffer cell"
       ]
     ],
     "fat-storing cell": [
@@ -2216,7 +3369,55 @@
         "vitamin A-storing cells"
       ]
     ],
+    "ito cell": [
+      "HSC",
+      [
+        "hepatic stellate cell",
+        "fat-storing cell",
+        "hepatic perisinusoidal cell",
+        "Ito cell",
+        "lipocyte",
+        "perisinusoidal cell",
+        "vitamin A-storing cells"
+      ]
+    ],
+    "hsc": [
+      "HSC",
+      [
+        "hepatic stellate cell",
+        "fat-storing cell",
+        "hepatic perisinusoidal cell",
+        "Ito cell",
+        "lipocyte",
+        "perisinusoidal cell",
+        "vitamin A-storing cells"
+      ]
+    ],
+    "lipocyte": [
+      "HSC",
+      [
+        "hepatic stellate cell",
+        "fat-storing cell",
+        "hepatic perisinusoidal cell",
+        "Ito cell",
+        "lipocyte",
+        "perisinusoidal cell",
+        "vitamin A-storing cells"
+      ]
+    ],
     "hepatic stellate cell": [
+      "HSC",
+      [
+        "hepatic stellate cell",
+        "fat-storing cell",
+        "hepatic perisinusoidal cell",
+        "Ito cell",
+        "lipocyte",
+        "perisinusoidal cell",
+        "vitamin A-storing cells"
+      ]
+    ],
+    "perisinusoidal cell": [
       "HSC",
       [
         "hepatic stellate cell",
@@ -2241,42 +3442,6 @@
       ]
     ],
     "vitamin a-storing cells": [
-      "HSC",
-      [
-        "hepatic stellate cell",
-        "fat-storing cell",
-        "hepatic perisinusoidal cell",
-        "Ito cell",
-        "lipocyte",
-        "perisinusoidal cell",
-        "vitamin A-storing cells"
-      ]
-    ],
-    "lipocyte": [
-      "HSC",
-      [
-        "hepatic stellate cell",
-        "fat-storing cell",
-        "hepatic perisinusoidal cell",
-        "Ito cell",
-        "lipocyte",
-        "perisinusoidal cell",
-        "vitamin A-storing cells"
-      ]
-    ],
-    "perisinusoidal cell": [
-      "HSC",
-      [
-        "hepatic stellate cell",
-        "fat-storing cell",
-        "hepatic perisinusoidal cell",
-        "Ito cell",
-        "lipocyte",
-        "perisinusoidal cell",
-        "vitamin A-storing cells"
-      ]
-    ],
-    "hsc": [
       "HSC",
       [
         "hepatic stellate cell",
@@ -2313,6 +3478,22 @@
         "epithelial cell of bile duct"
       ]
     ],
+    "dust cell": [
+      "AM",
+      [
+        "alveolar macrophage",
+        "dust cell",
+        "MF.Lu"
+      ]
+    ],
+    "alveolar macrophage": [
+      "AM",
+      [
+        "alveolar macrophage",
+        "dust cell",
+        "MF.Lu"
+      ]
+    ],
     "mf.lu": [
       "AM",
       [
@@ -2329,238 +3510,215 @@
         "MF.Lu"
       ]
     ],
-    "alveolar macrophage": [
-      "AM",
-      [
-        "alveolar macrophage",
-        "dust cell",
-        "MF.Lu"
-      ]
-    ],
-    "dust cell": [
-      "AM",
-      [
-        "alveolar macrophage",
-        "dust cell",
-        "MF.Lu"
-      ]
-    ],
-    "pulmonary alveolar type i cell": [
+    "pulmonary alveolar type 1 cell": [
       "AT1",
       [
+        "alveolar type I cell",
+        "type I pneumocyte",
         "pulmonary alveolar type 1 cell",
         "AT1",
         "ATI",
         "lung type 1 cells",
         "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
-      ]
-    ],
-    "membranous pneumocytes": [
-      "AT1",
-      [
-        "pulmonary alveolar type 1 cell",
-        "AT1",
-        "ATI",
-        "lung type 1 cells",
-        "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
+        "pulmonary alveolar type I cell"
       ]
     ],
     "at1": [
       "AT1",
       [
+        "alveolar type I cell",
+        "type I pneumocyte",
         "pulmonary alveolar type 1 cell",
         "AT1",
         "ATI",
         "lung type 1 cells",
         "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
+        "pulmonary alveolar type I cell"
       ]
     ],
-    "squamous alveolar cell": [
+    "type i pneumocyte": [
       "AT1",
       [
+        "alveolar type I cell",
+        "type I pneumocyte",
         "pulmonary alveolar type 1 cell",
         "AT1",
         "ATI",
         "lung type 1 cells",
         "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
-      ]
-    ],
-    "pulmonary alveolar type 1 cell": [
-      "AT1",
-      [
-        "pulmonary alveolar type 1 cell",
-        "AT1",
-        "ATI",
-        "lung type 1 cells",
-        "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
-      ]
-    ],
-    "small alveolar cells": [
-      "AT1",
-      [
-        "pulmonary alveolar type 1 cell",
-        "AT1",
-        "ATI",
-        "lung type 1 cells",
-        "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
+        "pulmonary alveolar type I cell"
       ]
     ],
     "lung type 1 cells": [
       "AT1",
       [
+        "alveolar type I cell",
+        "type I pneumocyte",
         "pulmonary alveolar type 1 cell",
         "AT1",
         "ATI",
         "lung type 1 cells",
         "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
+        "pulmonary alveolar type I cell"
+      ]
+    ],
+    "membranous pneumocytes": [
+      "AT1",
+      [
+        "alveolar type I cell",
+        "type I pneumocyte",
+        "pulmonary alveolar type 1 cell",
+        "AT1",
+        "ATI",
+        "lung type 1 cells",
+        "membranous pneumocytes",
+        "pulmonary alveolar type I cell"
+      ]
+    ],
+    "pulmonary alveolar type i cell": [
+      "AT1",
+      [
+        "alveolar type I cell",
+        "type I pneumocyte",
+        "pulmonary alveolar type 1 cell",
+        "AT1",
+        "ATI",
+        "lung type 1 cells",
+        "membranous pneumocytes",
+        "pulmonary alveolar type I cell"
       ]
     ],
     "ati": [
       "AT1",
       [
+        "alveolar type I cell",
+        "type I pneumocyte",
         "pulmonary alveolar type 1 cell",
         "AT1",
         "ATI",
         "lung type 1 cells",
         "membranous pneumocytes",
-        "pulmonary alveolar type I cell",
-        "small alveolar cells",
-        "squamous alveolar cell"
+        "pulmonary alveolar type I cell"
       ]
     ],
-    "cuboidal type ii cell": [
-      "AT2",
+    "alveolar type i cell": [
+      "AT1",
       [
-        "pulmonary alveolar type 2 cell",
-        "AT2",
-        "ATII",
-        "cuboidal type II cell",
-        "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
+        "alveolar type I cell",
+        "type I pneumocyte",
+        "pulmonary alveolar type 1 cell",
+        "AT1",
+        "ATI",
+        "lung type 1 cells",
+        "membranous pneumocytes",
+        "pulmonary alveolar type I cell"
       ]
     ],
     "pulmonary alveolar type 2 cell": [
       "AT2",
       [
+        "alveolar type II cell",
+        "type II pneumocyte",
         "pulmonary alveolar type 2 cell",
         "AT2",
         "ATII",
         "cuboidal type II cell",
         "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
-      ]
-    ],
-    "lung type ii cell": [
-      "AT2",
-      [
-        "pulmonary alveolar type 2 cell",
-        "AT2",
-        "ATII",
-        "cuboidal type II cell",
-        "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
+        "great alveolar cell"
       ]
     ],
     "at2": [
       "AT2",
       [
+        "alveolar type II cell",
+        "type II pneumocyte",
         "pulmonary alveolar type 2 cell",
         "AT2",
         "ATII",
         "cuboidal type II cell",
         "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
-      ]
-    ],
-    "lung type 2 cell": [
-      "AT2",
-      [
-        "pulmonary alveolar type 2 cell",
-        "AT2",
-        "ATII",
-        "cuboidal type II cell",
-        "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
+        "great alveolar cell"
       ]
     ],
     "great alveolar cell": [
       "AT2",
       [
+        "alveolar type II cell",
+        "type II pneumocyte",
         "pulmonary alveolar type 2 cell",
         "AT2",
         "ATII",
         "cuboidal type II cell",
         "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
+        "great alveolar cell"
       ]
     ],
-    "atii": [
+    "alveolar type ii cell": [
       "AT2",
       [
+        "alveolar type II cell",
+        "type II pneumocyte",
         "pulmonary alveolar type 2 cell",
         "AT2",
         "ATII",
         "cuboidal type II cell",
         "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
+        "great alveolar cell"
+      ]
+    ],
+    "type ii pneumocyte": [
+      "AT2",
+      [
+        "alveolar type II cell",
+        "type II pneumocyte",
+        "pulmonary alveolar type 2 cell",
+        "AT2",
+        "ATII",
+        "cuboidal type II cell",
+        "granular pneumocyte",
+        "great alveolar cell"
+      ]
+    ],
+    "cuboidal type ii cell": [
+      "AT2",
+      [
+        "alveolar type II cell",
+        "type II pneumocyte",
+        "pulmonary alveolar type 2 cell",
+        "AT2",
+        "ATII",
+        "cuboidal type II cell",
+        "granular pneumocyte",
+        "great alveolar cell"
       ]
     ],
     "granular pneumocyte": [
       "AT2",
       [
+        "alveolar type II cell",
+        "type II pneumocyte",
         "pulmonary alveolar type 2 cell",
         "AT2",
         "ATII",
         "cuboidal type II cell",
         "granular pneumocyte",
-        "great alveolar cell",
-        "lung type 2 cell",
-        "lung type II cell"
+        "great alveolar cell"
+      ]
+    ],
+    "atii": [
+      "AT2",
+      [
+        "alveolar type II cell",
+        "type II pneumocyte",
+        "pulmonary alveolar type 2 cell",
+        "AT2",
+        "ATII",
+        "cuboidal type II cell",
+        "granular pneumocyte",
+        "great alveolar cell"
       ]
     ],
     "club cell": [
-      "Club",
-      [
-        "club cell",
-        "Clara cell"
-      ]
-    ],
-    "club": [
       "Club",
       [
         "club cell",
@@ -2574,13 +3732,20 @@
         "Clara cell"
       ]
     ],
-    "ciliated epithelial cell": [
+    "club": [
+      "Club",
+      [
+        "club cell",
+        "Clara cell"
+      ]
+    ],
+    "ciliated": [
       "Ciliated",
       [
         "ciliated epithelial cell"
       ]
     ],
-    "ciliated": [
+    "ciliated epithelial cell": [
       "Ciliated",
       [
         "ciliated epithelial cell"
@@ -2600,7 +3765,7 @@
         "nerve cell"
       ]
     ],
-    "astrocyte": [
+    "astro": [
       "Astro",
       [
         "astrocyte",
@@ -2614,110 +3779,110 @@
         "astrocytic glia"
       ]
     ],
-    "astro": [
+    "astrocyte": [
       "Astro",
       [
         "astrocyte",
         "astrocytic glia"
       ]
     ],
-    "brain macrophage": [
+    "brain-resident macrophage": [
       "MG",
       [
+        "microglia",
         "microglial cell",
         "brain macrophage",
         "brain-resident macrophage",
         "hortega cells",
         "MF.microglia.CNS",
-        "microglia",
-        "microgliocyte"
-      ]
-    ],
-    "hortega cells": [
-      "MG",
-      [
-        "microglial cell",
-        "brain macrophage",
-        "brain-resident macrophage",
-        "hortega cells",
-        "MF.microglia.CNS",
-        "microglia",
-        "microgliocyte"
-      ]
-    ],
-    "microglia": [
-      "MG",
-      [
-        "microglial cell",
-        "brain macrophage",
-        "brain-resident macrophage",
-        "hortega cells",
-        "MF.microglia.CNS",
-        "microglia",
         "microgliocyte"
       ]
     ],
     "mg": [
       "MG",
       [
+        "microglia",
         "microglial cell",
         "brain macrophage",
         "brain-resident macrophage",
         "hortega cells",
         "MF.microglia.CNS",
-        "microglia",
-        "microgliocyte"
-      ]
-    ],
-    "brain-resident macrophage": [
-      "MG",
-      [
-        "microglial cell",
-        "brain macrophage",
-        "brain-resident macrophage",
-        "hortega cells",
-        "MF.microglia.CNS",
-        "microglia",
-        "microgliocyte"
-      ]
-    ],
-    "mf.microglia.cns": [
-      "MG",
-      [
-        "microglial cell",
-        "brain macrophage",
-        "brain-resident macrophage",
-        "hortega cells",
-        "MF.microglia.CNS",
-        "microglia",
         "microgliocyte"
       ]
     ],
     "microgliocyte": [
       "MG",
       [
+        "microglia",
         "microglial cell",
         "brain macrophage",
         "brain-resident macrophage",
         "hortega cells",
         "MF.microglia.CNS",
+        "microgliocyte"
+      ]
+    ],
+    "mf.microglia.cns": [
+      "MG",
+      [
         "microglia",
+        "microglial cell",
+        "brain macrophage",
+        "brain-resident macrophage",
+        "hortega cells",
+        "MF.microglia.CNS",
+        "microgliocyte"
+      ]
+    ],
+    "microglia": [
+      "MG",
+      [
+        "microglia",
+        "microglial cell",
+        "brain macrophage",
+        "brain-resident macrophage",
+        "hortega cells",
+        "MF.microglia.CNS",
+        "microgliocyte"
+      ]
+    ],
+    "brain macrophage": [
+      "MG",
+      [
+        "microglia",
+        "microglial cell",
+        "brain macrophage",
+        "brain-resident macrophage",
+        "hortega cells",
+        "MF.microglia.CNS",
         "microgliocyte"
       ]
     ],
     "microglial cell": [
       "MG",
       [
+        "microglia",
         "microglial cell",
         "brain macrophage",
         "brain-resident macrophage",
         "hortega cells",
         "MF.microglia.CNS",
-        "microglia",
         "microgliocyte"
       ]
     ],
-    "oligodendroglia": [
+    "hortega cells": [
+      "MG",
+      [
+        "microglia",
+        "microglial cell",
+        "brain macrophage",
+        "brain-resident macrophage",
+        "hortega cells",
+        "MF.microglia.CNS",
+        "microgliocyte"
+      ]
+    ],
+    "oligo": [
       "Oligo",
       [
         "oligodendrocyte",
@@ -2725,7 +3890,7 @@
         "OLs"
       ]
     ],
-    "oligodendrocyte": [
+    "oligodendroglia": [
       "Oligo",
       [
         "oligodendrocyte",
@@ -2741,7 +3906,7 @@
         "OLs"
       ]
     ],
-    "oligo": [
+    "oligodendrocyte": [
       "Oligo",
       [
         "oligodendrocyte",
@@ -2749,27 +3914,17 @@
         "OLs"
       ]
     ],
-    "ng2 cell": [
-      "OPC",
-      [
-        "oligodendrocyte precursor cell",
-        "NG2 cell",
-        "O2-A",
-        "OPC",
-        "Polydendrocyte"
-      ]
-    ],
-    "oligodendrocyte precursor cell": [
-      "OPC",
-      [
-        "oligodendrocyte precursor cell",
-        "NG2 cell",
-        "O2-A",
-        "OPC",
-        "Polydendrocyte"
-      ]
-    ],
     "opc": [
+      "OPC",
+      [
+        "oligodendrocyte precursor cell",
+        "NG2 cell",
+        "O2-A",
+        "OPC",
+        "Polydendrocyte"
+      ]
+    ],
+    "ng2 cell": [
       "OPC",
       [
         "oligodendrocyte precursor cell",
@@ -2799,90 +3954,100 @@
         "Polydendrocyte"
       ]
     ],
-    "cardiocyte": [
-      "CM",
+    "oligodendrocyte precursor cell": [
+      "OPC",
       [
-        "cardiac muscle cell",
-        "cardiac muscle fiber",
-        "cardiac myocyte",
-        "cardiocyte",
-        "cardiomyocyte",
-        "heart muscle cell"
-      ]
-    ],
-    "cardiac muscle cell": [
-      "CM",
-      [
-        "cardiac muscle cell",
-        "cardiac muscle fiber",
-        "cardiac myocyte",
-        "cardiocyte",
-        "cardiomyocyte",
-        "heart muscle cell"
-      ]
-    ],
-    "cm": [
-      "CM",
-      [
-        "cardiac muscle cell",
-        "cardiac muscle fiber",
-        "cardiac myocyte",
-        "cardiocyte",
-        "cardiomyocyte",
-        "heart muscle cell"
-      ]
-    ],
-    "cardiomyocyte": [
-      "CM",
-      [
-        "cardiac muscle cell",
-        "cardiac muscle fiber",
-        "cardiac myocyte",
-        "cardiocyte",
-        "cardiomyocyte",
-        "heart muscle cell"
+        "oligodendrocyte precursor cell",
+        "NG2 cell",
+        "O2-A",
+        "OPC",
+        "Polydendrocyte"
       ]
     ],
     "cardiac myocyte": [
       "CM",
       [
+        "cardiomyocyte",
         "cardiac muscle cell",
         "cardiac muscle fiber",
         "cardiac myocyte",
         "cardiocyte",
-        "cardiomyocyte",
-        "heart muscle cell"
-      ]
-    ],
-    "cardiac muscle fiber": [
-      "CM",
-      [
-        "cardiac muscle cell",
-        "cardiac muscle fiber",
-        "cardiac myocyte",
-        "cardiocyte",
-        "cardiomyocyte",
         "heart muscle cell"
       ]
     ],
     "heart muscle cell": [
       "CM",
       [
+        "cardiomyocyte",
         "cardiac muscle cell",
         "cardiac muscle fiber",
         "cardiac myocyte",
         "cardiocyte",
-        "cardiomyocyte",
         "heart muscle cell"
       ]
     ],
-    "cf": [
+    "cardiocyte": [
+      "CM",
+      [
+        "cardiomyocyte",
+        "cardiac muscle cell",
+        "cardiac muscle fiber",
+        "cardiac myocyte",
+        "cardiocyte",
+        "heart muscle cell"
+      ]
+    ],
+    "cm": [
+      "CM",
+      [
+        "cardiomyocyte",
+        "cardiac muscle cell",
+        "cardiac muscle fiber",
+        "cardiac myocyte",
+        "cardiocyte",
+        "heart muscle cell"
+      ]
+    ],
+    "cardiac muscle fiber": [
+      "CM",
+      [
+        "cardiomyocyte",
+        "cardiac muscle cell",
+        "cardiac muscle fiber",
+        "cardiac myocyte",
+        "cardiocyte",
+        "heart muscle cell"
+      ]
+    ],
+    "cardiomyocyte": [
+      "CM",
+      [
+        "cardiomyocyte",
+        "cardiac muscle cell",
+        "cardiac muscle fiber",
+        "cardiac myocyte",
+        "cardiocyte",
+        "heart muscle cell"
+      ]
+    ],
+    "cardiac muscle cell": [
+      "CM",
+      [
+        "cardiomyocyte",
+        "cardiac muscle cell",
+        "cardiac muscle fiber",
+        "cardiac myocyte",
+        "cardiocyte",
+        "heart muscle cell"
+      ]
+    ],
+    "fibroblast": [
       "CF",
       [
         "fibroblast"
       ]
     ],
-    "fibroblast": [
+    "cf": [
       "CF",
       [
         "fibroblast"
@@ -2916,142 +4081,142 @@
         "chalice cell"
       ]
     ],
-    "paneth cell": [
-      "Paneth",
-      [
-        "paneth cell"
-      ]
-    ],
     "paneth": [
       "Paneth",
       [
         "paneth cell"
       ]
     ],
+    "paneth cell": [
+      "Paneth",
+      [
+        "paneth cell"
+      ]
+    ],
+    "pancreatic beta cell": [
+      "BetaCell",
+      [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
+        "type B pancreatic cell",
+        "B-cell of pancreatic islet",
+        "beta cell islet",
+        "beta cell of pancreatic islet",
+        "insulin-secreting cell"
+      ]
+    ],
     "betacell": [
       "BetaCell",
       [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
         "type B pancreatic cell",
         "B-cell of pancreatic islet",
-        "beta cell",
         "beta cell islet",
         "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
-      ]
-    ],
-    "beta cell islet": [
-      "BetaCell",
-      [
-        "type B pancreatic cell",
-        "B-cell of pancreatic islet",
-        "beta cell",
-        "beta cell islet",
-        "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
-      ]
-    ],
-    "b-cell of pancreatic islet": [
-      "BetaCell",
-      [
-        "type B pancreatic cell",
-        "B-cell of pancreatic islet",
-        "beta cell",
-        "beta cell islet",
-        "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
-      ]
-    ],
-    "type b pancreatic cell": [
-      "BetaCell",
-      [
-        "type B pancreatic cell",
-        "B-cell of pancreatic islet",
-        "beta cell",
-        "beta cell islet",
-        "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
-      ]
-    ],
-    "pancreatic b cell": [
-      "BetaCell",
-      [
-        "type B pancreatic cell",
-        "B-cell of pancreatic islet",
-        "beta cell",
-        "beta cell islet",
-        "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
-      ]
-    ],
-    "insulin-secreting cell": [
-      "BetaCell",
-      [
-        "type B pancreatic cell",
-        "B-cell of pancreatic islet",
-        "beta cell",
-        "beta cell islet",
-        "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
-      ]
-    ],
-    "beta cell of pancreatic islet": [
-      "BetaCell",
-      [
-        "type B pancreatic cell",
-        "B-cell of pancreatic islet",
-        "beta cell",
-        "beta cell islet",
-        "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
-      ]
-    ],
-    "pancreatic b-cell": [
-      "BetaCell",
-      [
-        "type B pancreatic cell",
-        "B-cell of pancreatic islet",
-        "beta cell",
-        "beta cell islet",
-        "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
+        "insulin-secreting cell"
       ]
     ],
     "beta cell": [
       "BetaCell",
       [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
         "type B pancreatic cell",
         "B-cell of pancreatic islet",
-        "beta cell",
         "beta cell islet",
         "beta cell of pancreatic islet",
-        "insulin-secreting cell",
-        "pancreatic B cell",
-        "pancreatic B-cell"
+        "insulin-secreting cell"
       ]
     ],
-    "insulin secreting cell": [
+    "insulin-secreting cell": [
+      "BetaCell",
+      [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
+        "type B pancreatic cell",
+        "B-cell of pancreatic islet",
+        "beta cell islet",
+        "beta cell of pancreatic islet",
+        "insulin-secreting cell"
+      ]
+    ],
+    "b-cell of pancreatic islet": [
+      "BetaCell",
+      [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
+        "type B pancreatic cell",
+        "B-cell of pancreatic islet",
+        "beta cell islet",
+        "beta cell of pancreatic islet",
+        "insulin-secreting cell"
+      ]
+    ],
+    "beta cell of pancreatic islet": [
+      "BetaCell",
+      [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
+        "type B pancreatic cell",
+        "B-cell of pancreatic islet",
+        "beta cell islet",
+        "beta cell of pancreatic islet",
+        "insulin-secreting cell"
+      ]
+    ],
+    "beta cell islet": [
+      "BetaCell",
+      [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
+        "type B pancreatic cell",
+        "B-cell of pancreatic islet",
+        "beta cell islet",
+        "beta cell of pancreatic islet",
+        "insulin-secreting cell"
+      ]
+    ],
+    "type b pancreatic cell": [
+      "BetaCell",
+      [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
+        "type B pancreatic cell",
+        "B-cell of pancreatic islet",
+        "beta cell islet",
+        "beta cell of pancreatic islet",
+        "insulin-secreting cell"
+      ]
+    ],
+    "islet beta cell": [
+      "BetaCell",
+      [
+        "beta cell",
+        "pancreatic beta cell",
+        "islet beta cell",
+        "type B pancreatic cell",
+        "B-cell of pancreatic islet",
+        "beta cell islet",
+        "beta cell of pancreatic islet",
+        "insulin-secreting cell"
+      ]
+    ],
+    "alphacell": [
       "AlphaCell",
       [
         "insulin secreting cell"
       ]
     ],
-    "alphacell": [
+    "insulin secreting cell": [
       "AlphaCell",
       [
         "insulin secreting cell"
@@ -3063,14 +4228,14 @@
         "keratinocyte"
       ]
     ],
-    "melanophore": [
+    "melanocyte": [
       "Melanocyte",
       [
         "melanocyte",
         "melanophore"
       ]
     ],
-    "melanocyte": [
+    "melanophore": [
       "Melanocyte",
       [
         "melanocyte",
