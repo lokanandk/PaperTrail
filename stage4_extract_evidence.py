@@ -851,17 +851,53 @@ def context_match_score(record: dict, prediction: dict) -> float:
     return min(score, 1.0)
 
 
+# A gene symbol is short, and fuzzy-matching a short string against a whole
+# abstract is close to meaningless — "PTDSS1" scores 50/100 against a paper on
+# agarose microbeads purely by coincidence, which was enough to drag unrelated
+# papers over the relevance threshold. Only long descriptive names are matched
+# approximately, and then only at high similarity.
+_FUZZY_MIN_ALIAS_LEN = 12
+_FUZZY_MIN_SCORE     = 90.0
+
+# Below this, the paper does not really name the entity at all.
+ENTITY_PRESENCE_MIN = 90.0
+
+
+def _names_entity(text: str, alias: str) -> bool:
+    """True if alias appears as a whole word, not buried inside another token."""
+    return re.search(rf"(?<![0-9a-z]){re.escape(alias)}(?![0-9a-z])", text) is not None
+
+
 def alias_match_score(record: dict, prediction: dict) -> tuple:
-    text = (record.get("title", "") + " " + record.get("abstract", "")).lower()
-    best, best_a = 0, None
-    for a in prediction.get("aliases", []):
-        al = a.lower()
-        if al in text:
+    """
+    How strongly this record actually names the entity.
+
+    Returns (score, matched_alias). 100 means the entity is named outright.
+    Full text is consulted when available, so a paper that only discusses the
+    gene in its methods still counts.
+    """
+    text = " ".join([
+        record.get("title", "") or "",
+        record.get("abstract", "") or "",
+        " ".join(record.get("pmc_sentences", []) or []),
+    ]).lower()
+
+    aliases = [a for a in (prediction.get("aliases") or []) if str(a).strip()]
+    if not aliases:
+        aliases = [prediction.get("entity", "")]
+
+    best, best_a = 0.0, None
+    for a in aliases:
+        al = str(a).strip().lower()
+        if not al:
+            continue
+        if _names_entity(text, al):
             return 100.0, a
-        sc = fuzz.partial_ratio(al, text)
-        if sc > best:
-            best, best_a = sc, a
-    return float(best), best_a
+        if len(al) >= _FUZZY_MIN_ALIAS_LEN and " " in al:
+            sc = fuzz.partial_ratio(al, text)
+            if sc >= _FUZZY_MIN_SCORE and sc > best:
+                best, best_a = float(sc), a
+    return best, best_a
 
 
 def vocab_overlap_score(record: dict, prediction: dict = None) -> float:
@@ -957,6 +993,13 @@ def extract_all(literature_path: Path, predictions_path: Path,
                 continue
 
             am_score, am_alias = alias_match_score(rec, prediction)
+
+            # Entity presence is a precondition, not something a high disease
+            # score can compensate for. A paper that never names the gene is
+            # not weak evidence about it — it is no evidence about it.
+            if am_score < ENTITY_PRESENCE_MIN:
+                continue
+
             ctx     = context_match_score(rec, prediction)
             vocab   = vocab_overlap_score(rec, prediction)
             quality = study_quality_weight(rec, prediction)

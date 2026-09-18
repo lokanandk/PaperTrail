@@ -1060,6 +1060,28 @@ _GENE_SKIP = {"IN","IS","ARE","WAS","WERE","THE","AND","OR","FOR","OF","UP",
               "WHAT","WHO","ANY","ONE","TWO","THREE","FOUR","FIVE","SOME",
               "AFTER","BEFORE","DURING","WHILE","ALSO","EITHER","NEITHER"}
 
+def _vocab_lookup(table, text: str):
+    """
+    Most specific vocabulary key that appears in text as a standalone word.
+
+    Plain `key in text` is unsafe here. The vocabulary is full of short
+    abbreviations — "as" (ankylosing spondylitis), "b" (B cell), "all" (acute
+    lymphoblastic leukaemia), "mi", "ad" — and those match inside ordinary
+    words: "disease" contains "as", "ascending" contains "as", and almost every
+    sentence contains a "b". That is how a prediction about the thick ascending
+    limb ended up labelled as ankylosing spondylitis in a B cell.
+
+    Longest key wins, so a multi-word term is preferred over a short
+    abbreviation that happens to also appear. A trailing plural "s" is
+    tolerated, so "pDCs" still matches the key "pdc".
+    """
+    for key in sorted(table, key=len, reverse=True):
+        k = str(key).strip().lower()
+        if k and re.search(rf"(?<![0-9a-z]){re.escape(k)}s?(?![0-9a-z])", text):
+            return key
+    return None
+
+
 def _rule_convert(prompt: str) -> str:
     import re as _re
     p, p_l = prompt.strip(), prompt.strip().lower()
@@ -1104,16 +1126,17 @@ def _rule_convert(prompt: str) -> str:
             all_entities.append(canonical); seen_e.add(canonical)
     all_entities = list(dict.fromkeys(all_entities))
     disease_ctx, disease_syns = "any", []
-    for term in sorted(_DISEASE_TABLE.keys(), key=len, reverse=True):
-        if term in p_l:
-            disease_ctx, disease_syns = _DISEASE_TABLE[term]; break
+    _dis_key = _vocab_lookup(_DISEASE_TABLE, p_l)
+    if _dis_key:
+        disease_ctx, disease_syns = _DISEASE_TABLE[_dis_key]
     tissue = "any"
     for tname, (keywords, tval) in _TISSUE_KEYWORDS.items():
-        if any(kw in p_l for kw in keywords): tissue = tval; break
+        if _vocab_lookup(keywords, p_l): tissue = tval; break
     if disease_ctx in ("DKD","HKD","CKD","AKI") and tissue == "any": tissue = "kidney"
     cell_code, cell_syns = "any", []
-    for alias in sorted(_CELL_TYPE_TABLE.keys(), key=len, reverse=True):
-        if alias in p_l: cell_code, cell_syns = _CELL_TYPE_TABLE[alias]; break
+    _ct_key = _vocab_lookup(_CELL_TYPE_TABLE, p_l)
+    if _ct_key:
+        cell_code, cell_syns = _CELL_TYPE_TABLE[_ct_key]
     global_direction = "bidirectional"
     for dname, dpat in _DIRECTION_TOKENS.items():
         if _re.search(dpat, p, _re.IGNORECASE): global_direction = dname; break

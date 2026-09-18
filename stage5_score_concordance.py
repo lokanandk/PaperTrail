@@ -359,13 +359,26 @@ def _descriptive(pred, expected, n_rel, n_dir, directional, evidence):
     Tier reflects literature volume confirming the entity is biologically active
     in this context — direction is not tested.
     """
+    # Volume alone is a poor signal: a pile of loosely-related papers should not
+    # read as strong evidence. Require the retained papers to be squarely on
+    # topic before calling an association strong.
+    rel_scores = [r.get("relevance", 0.0) for r in directional]
+    mean_relevance = (sum(rel_scores) / len(rel_scores)) if rel_scores else 0.0
+    well_targeted = mean_relevance >= 0.50
+
     if n_rel == 0:
         tier, reason = "NONE", "No relevant papers found"
-    elif n_dir >= 8 or n_rel >= 12:
+    elif (n_dir >= 8 or n_rel >= 12) and well_targeted:
         tier   = "STRONG"
         reason = (f"Strong association: {n_rel} relevant papers "
-                  f"({n_dir} with directional signals). "
+                  f"({n_dir} with directional signals, "
+                  f"mean relevance {mean_relevance:.2f}). "
                   f"Direction not tested (associated prediction).")
+    elif n_dir >= 8 or n_rel >= 12:
+        tier   = "MODERATE"
+        reason = (f"Association by volume only: {n_rel} relevant papers, but "
+                  f"mean relevance {mean_relevance:.2f} is low — the literature "
+                  f"mentions this entity without focusing on this context.")
     elif n_dir >= 4 or n_rel >= 5:
         tier   = "MODERATE"
         reason = (f"Moderate association: {n_rel} relevant, {n_dir} directional")
