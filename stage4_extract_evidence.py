@@ -630,6 +630,116 @@ def _get_exclusion_tokens(prediction: dict) -> List[str]:
 # Tokens that are tissue/organ words — they match many papers including cancer.
 # A record that passes the gate ONLY on these words, with no disease-specific
 # token, is not reliably on-topic and needs stricter checking.
+# Organs and the words papers actually use for them. A prediction scoped to
+# kidney must not be supported by a liver paper, but "kidney" and "renal" share
+# no characters, so the relationship has to be stated rather than matched.
+_ORGAN_SYNONYMS = {
+    # "medulla" is deliberately absent: the renal medulla and the medulla
+    # oblongata share the word, and brain papers should not read as kidney ones.
+    "kidney":   ("kidney", "renal", "nephro", "nephron", "glomerul", "tubul",
+                 "podocyte", "henle", "urinary"),
+    "liver":    ("liver", "hepatic", "hepato", "hepatocyte", "biliary"),
+    "lung":     ("lung", "pulmonary", "alveol", "airway", "bronch", "respiratory"),
+    "heart":    ("heart", "cardiac", "myocard", "cardiomyocyte", "ventric", "atrial"),
+    "brain":    ("brain", "neural", "neuron", "cerebral", "cortex", "glia",
+                 "microglia", "astrocyte", "hippocamp"),
+    "pancreas": ("pancreas", "pancreatic", "islet", "beta cell", "langerhans"),
+    "gut":      ("gut", "intestin", "colon", "ileum", "jejun", "mucosa", "bowel"),
+    "blood":    ("blood", "plasma", "serum", "pbmc", "leukocyte", "peripheral"),
+    "skin":     ("skin", "dermal", "epiderm", "keratinocyte", "cutaneous"),
+    "muscle":   ("muscle", "myocyte", "myotube", "myofib", "skeletal"),
+    "adipose":  ("adipose", "adipocyte", "fat tissue", "visceral fat"),
+    "bone":     ("bone", "osteo", "cartilage", "chondro", "skeletal"),
+    "immune":   ("immune", "lymph", "spleen", "thymus", "lymphocyte", "pbmc"),
+}
+
+
+def _tissue_terms_for(prediction: dict) -> list:
+    """Words that would show a paper is about this prediction's tissue."""
+    tissue = (prediction.get("tissue") or "any").strip().lower()
+    if tissue in ("any", "", "systemic"):
+        return []
+    terms = set(_ORGAN_SYNONYMS.get(tissue, (tissue,)))
+    for syn in (prediction.get("tissue_synonyms") or []):
+        s = str(syn).strip().lower()
+        if s:
+            terms.add(s)
+    return sorted(t for t in terms if t)
+
+
+def _organism_conflicts(record: dict, prediction: dict) -> bool:
+    """
+    True when the prediction is about humans and the paper plainly is not.
+
+    Decided from MeSH indexing, which is reliable when present: a paper tagged
+    "Animals" but not "Humans" is animal-only work. Papers with no MeSH terms
+    yet (recent deposits) are left alone rather than guessed at.
+    """
+    if (prediction.get("organism") or "any").strip().lower() != "human":
+        return False
+    mesh = [str(m).strip().lower() for m in (record.get("mesh_terms") or [])]
+    if not mesh or "humans" in mesh:
+        return False
+    return "animals" in mesh
+
+
+# Phrases naming a laboratory cell line rather than the tissue it derives
+# from. HEK293 ("human embryonic kidney") is a general-purpose expression host
+# that turns up in papers with no connection to kidney biology, so a paper
+# whose only kidney mention is this does not qualify as kidney evidence.
+_CELL_LINE_FALSE_FRIENDS = (
+    "human embryonic kidney", "hek293", "hek 293", "hek-293",
+    "chinese hamster ovary", "cho-k1", "cho k1",
+)
+
+
+def _mentions(text: str, term: str, whole_word: bool) -> bool:
+    """
+    Word-aware containment test.
+
+    Plain `term in text` is not safe: the cell-type abbreviation "TAL" matches
+    inside "total", which let a liver paper satisfy a thick-ascending-limb
+    prediction. Tissue stems ("tubul", "nephro") are matched at the start of a
+    word so they still catch "tubular" and "nephropathy".
+    """
+    tail = r"(?![0-9a-z])" if whole_word else ""
+    return re.search(rf"(?<![0-9a-z]){re.escape(term)}{tail}", text) is not None
+
+
+def passes_context_gate(record: dict, prediction: dict) -> bool:
+    """
+    Enforce the tissue and organism the prediction actually specifies.
+
+    These were previously only small additions to the relevance score, so a
+    paper on PTDSS1 in mouse liver counted as evidence for PTDSS1 in human
+    kidney. Mentioning the prediction's cell type is accepted in place of the
+    tissue, since a paper about podocytes is about kidney whether or not it
+    uses the word.
+    """
+    combo = " ".join([
+        record.get("title", "") or "",
+        record.get("abstract", "") or "",
+        " ".join(record.get("mesh_terms", []) or []),
+    ]).lower()
+
+    # Judge tissue on the text with cell-line names removed, so "human
+    # embryonic kidney cells" cannot stand in for kidney tissue.
+    tissue_text = combo
+    for phrase in _CELL_LINE_FALSE_FRIENDS:
+        tissue_text = tissue_text.replace(phrase, " ")
+
+    tissue_terms = _tissue_terms_for(prediction)
+    if tissue_terms and not any(_mentions(tissue_text, t, whole_word=False)
+                                for t in tissue_terms):
+        cell_terms = [v.lower() for v in
+                      _get_all_synonyms(prediction, "cell_type", "cell_type_synonyms")
+                      if len(v) >= 3]
+        if not any(_mentions(tissue_text, c, whole_word=True) for c in cell_terms):
+            return False
+
+    return not _organism_conflicts(record, prediction)
+
+
 _TISSUE_ONLY_TOKENS = frozenset({
     "kidney", "renal", "liver", "hepatic", "lung", "pulmonary",
     "brain", "neural", "cardiac", "heart", "muscle", "bone",
@@ -871,6 +981,26 @@ ENTITY_PRESENCE_MIN = 90.0
 _AMBIGUOUS_ALIAS_MAXLEN = 5
 _AMBIGUOUS_ALIAS_SCORE  = 60.0
 
+# ...unless the paper corroborates it. A distinctive word from the entity's
+# full name is enough: a paper writing "PSS1" alongside "phosphatidylserine" is
+# genuinely about the gene, whereas the poly(styrene sulfonic acid) papers
+# never mention it. Without this, legitimate abbreviation-only papers would be
+# thrown away with the collisions.
+_CORROBORATION_MIN_WORD_LEN = 10
+
+
+def _corroborating_terms(prediction: dict) -> list:
+    """Distinctive words from the entity's descriptive names."""
+    terms = set()
+    for a in (prediction.get("aliases") or []):
+        name = str(a).strip().lower()
+        if " " not in name:
+            continue
+        for word in re.split(r"[\s/,_-]+", name):
+            if len(word) >= _CORROBORATION_MIN_WORD_LEN:
+                terms.add(word)
+    return sorted(terms)
+
 
 def _names_entity(text: str, alias: str) -> bool:
     """True if alias appears as a whole word, not buried inside another token."""
@@ -899,6 +1029,8 @@ def alias_match_score(record: dict, prediction: dict) -> tuple:
     # only trusted when they are long enough to be unambiguous.
     auto = {str(a).strip().lower() for a in (prediction.get("auto_aliases") or [])}
 
+    corroborators = None   # computed lazily; only ambiguous matches need it
+
     best, best_a = 0.0, None
     for a in aliases:
         al = str(a).strip().lower()
@@ -909,6 +1041,10 @@ def alias_match_score(record: dict, prediction: dict) -> tuple:
                    or " " in al)
         if _names_entity(text, al):
             if trusted:
+                return 100.0, a
+            if corroborators is None:
+                corroborators = _corroborating_terms(prediction)
+            if any(term in text for term in corroborators):
                 return 100.0, a
             if _AMBIGUOUS_ALIAS_SCORE > best:
                 best, best_a = _AMBIGUOUS_ALIAS_SCORE, a
@@ -998,7 +1134,8 @@ def extract_all(literature_path: Path, predictions_path: Path,
             continue
 
         gated_records = [r for r in payload.get("records", [])
-                         if passes_disease_gate(r, prediction)]
+                         if passes_disease_gate(r, prediction)
+                         and passes_context_gate(r, prediction)]
 
         if SEMANTIC_AVAILABLE and gated_records:
             semantic_scores = compute_semantic_scores_for_records(

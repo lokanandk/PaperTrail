@@ -258,8 +258,16 @@ def _batch_pmids_to_pmcids(pmids: List[str],
     result: Dict[str, Optional[str]] = {p: None for p in pmids}
     for i in range(0, len(pmids), batch_size):
         batch = pmids[i:i + batch_size]
-        id_str = ",".join(batch)
-        def _do(ids=id_str):
+
+        # The id list must be passed as a *list*, not a comma-joined string.
+        # ELink is the one E-utility that treats those differently: a list
+        # gives one LinkSet per input PMID, while a comma-delimited string
+        # merges every destination ID into a single LinkSet. With the string
+        # form the mapping below silently assigned the first PMC article in
+        # the batch to the first PMID and nothing to the other 99 — so papers
+        # were given other papers' full text, and almost no record ever got
+        # its own. See the note in Bio.Entrez.elink's docstring.
+        def _do(ids=list(batch)):
             h   = Entrez.elink(dbfrom="pubmed", db="pmc", id=ids, retmode="xml")
             rec = Entrez.read(h)
             h.close()
@@ -267,11 +275,12 @@ def _batch_pmids_to_pmcids(pmids: List[str],
         try:
             rec = _retry(_do)
             time.sleep(SLEEP_BETWEEN_CALLS)
-            # ELink returns one LinkSet per input PMID when id= is a comma list
             for link_set in rec:
-                # The source PMID is in IdList[0]
                 src_ids = link_set.get("IdList", [])
-                if not src_ids:
+                # A LinkSet covering more than one source PMID means the
+                # one-to-one mapping did not happen; guessing which PMC
+                # article belongs to which paper would corrupt the records.
+                if len(src_ids) != 1:
                     continue
                 src_pmid = str(src_ids[0])
                 for db_link in link_set.get("LinkSetDb", []):
