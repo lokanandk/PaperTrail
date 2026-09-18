@@ -1,0 +1,43 @@
+# Secrets — never commit API keys or gateway URLs
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Pipeline output. Every run writes a directory here; they are reproducible
+# from predictions.yaml and get large quickly.
+runs/
+output/
+predictions_expanded.yaml
+queries.yaml
+literature_raw.json
+extracted_evidence.json
+scored_predictions.json
+dashboard.html
+report.md
+
+# Caches. Kept on disk so re-runs are fast, but they are downloaded data
+# rather than source, and they grow into the tens of megabytes.
+cache/
+shared_cache/
+vocab_cache/
+*.obo
+
+# Local models
+*.gguf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

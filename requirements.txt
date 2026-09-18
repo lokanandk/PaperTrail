@@ -1,0 +1,26 @@
+# Core — needed to run the app and the full pipeline.
+flask>=3.0
+pyyaml>=6.0
+biopython>=1.81          # Entrez / PubMed access
+mygene>=3.2              # gene alias expansion (stage 1)
+rapidfuzz>=3.0           # fuzzy entity matching (stages 1, 4)
+tqdm>=4.65
+numpy>=1.24
+scipy>=1.10              # binomial tests in the concordance scoring
+pandas>=2.0
+scikit-learn>=1.3        # TF-IDF for dashboard paper enrichment
+yake>=0.4.8              # keyphrase extraction for the dashboard
+matplotlib>=3.7
+seaborn>=0.12
+
+# Ontology enrichment — only needed to rebuild papertrail_vocab.json
+# with build_papertrail_vocab.py. The shipped vocab works without these.
+networkx>=3.0
+obonet>=1.0
+
+# Optional. Semantic relevance scoring in stage 4 falls back to keyword
+# matching when this is absent; it is a large download.
+# sentence-transformers>=2.2
+
+# Optional. Only for running a local GGUF model instead of a gateway.
+# llama-cpp-python>=0.2
