@@ -67,6 +67,27 @@ def expand_gene(symbol: str, cache: dict) -> dict:
     return cache[symbol]
 
 
+# Fields every later stage assumes are lists. A prediction written by hand (or
+# returned by an LLM) sometimes has one of these as a bare string instead —
+# `disease_synonyms: "lupus"` instead of `["lupus"]`. Most call sites don't
+# crash on that; they silently iterate the string's characters instead of its
+# words, which is worse than a crash because nothing looks wrong until the
+# PubMed queries come back empty. Normalizing here, once, means every later
+# stage can trust the type without checking it itself.
+_LIST_FIELDS = ("aliases", "disease_synonyms", "disease_exclusions", "cell_type_synonyms")
+
+
+def _ensure_list(value):
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    if isinstance(value, str):
+        # A single value typed without brackets, or a comma-separated list.
+        return [v.strip() for v in value.split(",") if v.strip()]
+    return [value]
+
+
 def expand_predictions(predictions_path: Path, output_path: Path) -> None:
     with open(predictions_path) as f:
         data = yaml.safe_load(f)
@@ -76,6 +97,9 @@ def expand_predictions(predictions_path: Path, output_path: Path) -> None:
 
     expanded = []
     for p in data["predictions"]:
+        for field in _LIST_FIELDS:
+            if field in p:
+                p[field] = _ensure_list(p[field])
         primary = p["entity"]
         if p["entity_type"] in ("gene", "transporter"):
             info = expand_gene(primary, cache)
